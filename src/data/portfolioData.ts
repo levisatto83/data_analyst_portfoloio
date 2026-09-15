@@ -67,8 +67,8 @@ export const PERSONAL_INFO = {
   stats: [
     { label: "Years Experience", value: "6+", highlight: "Enterprise & Scale" },
     { label: "Core Backend", value: "Python", highlight: "FastAPI, Django, Flask" },
-    { label: "Core Frontend", value: "ReactJS", highlight: "TypeScript & Data Viz" },
-    { label: "Database Mastery", value: "PostgreSQL", highlight: "Advanced Tuning & ORM" },
+    { label: "Core Frontend", value: "ReactJS", highlight: "TypeScript" },
+    { label: "Database Mastery", value: "PostgreSQL", highlight: "ORM" },
   ],
   summaryText: "Full-Stack Software Analyst with 6+ years of experience architecting, testing, and shipping end-to-end web applications and complex service-oriented server logic. Expert in Python (FastAPI, Django, Flask) and modern JavaScript/TypeScript utilizing ReactJS for scalable, interactive interfaces and data visualization dashboards. Strong background in relational database architecture (PostgreSQL), high-volume data-access models, and financial/operational reporting systems. Experienced in Agile environments, refactoring legacy software for performance and maintainability, and collaborating with cross-functional product and data engineering teams."
 };
@@ -82,10 +82,10 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
     skills: [
       { name: "Python", level: 98, experienceYears: "5+ yrs", highlight: true, tags: ["AsyncIO", "Typing", "Architecture"] },
       { name: "FastAPI", level: 96, experienceYears: "4+ yrs", highlight: true, tags: ["Pydantic", "OpenAPI", "High-Throughput"] },
-      { name: "Django & DRF", level: 92, experienceYears: "5+ yrs", highlight: true, tags: ["Enterprise", "ORM", "Auth"] },
-      { name: "Flask", level: 90, experienceYears: "4+ yrs", tags: ["Microservices", "Lightweight APIs"] },
-      { name: "Service-Oriented Architecture (SOA)", level: 94, experienceYears: "5+ yrs", highlight: true, tags: ["Microservices", "Event-Driven"] },
-      { name: "RESTful API Design", level: 98, experienceYears: "6+ yrs", highlight: true, tags: ["Standards", "Versioning", "Security"] },
+      { name: "Django & DRF", level: 88, experienceYears: "4+ yrs", highlight: true, tags: ["Enterprise", "ORM", "Auth"] },
+      { name: "Flask", level: 70, experienceYears: "2+ yrs", tags: ["Microservices", "Lightweight APIs"] },
+      { name: "Service-Oriented Architecture (SOA)", level: 94, experienceYears: "2+ yrs", highlight: true, tags: ["Microservices", "Event-Driven"] },
+      { name: "RESTful API Design", level: 88, experienceYears: "4+ yrs", highlight: true, tags: ["Standards", "Versioning", "Security"] },
       { name: "Complex Business Logic", level: 95, experienceYears: "6+ yrs", tags: ["Domain-Driven", "Data Processing"] }
     ]
   },
@@ -95,12 +95,11 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
     iconName: "Layout",
     description: "Modern, responsive, dynamic interfaces and high-density financial/operational analytical dashboards optimized for performance and accessibility.",
     skills: [
-      { name: "ReactJS", level: 95, experienceYears: "5+ yrs", highlight: true, tags: ["Hooks", "Custom Architecture", "Performance"] },
-      { name: "TypeScript", level: 94, experienceYears: "4+ yrs", highlight: true, tags: ["Strict Typing", "Interfaces", "Generics"] },
-      { name: "Modern JavaScript (ES6+)", level: 96, experienceYears: "6+ yrs", highlight: true, tags: ["Async/Await", "Event Loop"] },
-      { name: "Data Visualization Components", level: 92, experienceYears: "4+ yrs", highlight: true, tags: ["Analytics Dashboards", "Charts", "Real-Time"] },
-      { name: "HTML5 / Modern CSS3 / Tailwind", level: 95, experienceYears: "6+ yrs", tags: ["Responsive UI", "CSS Modules", "Tailwind"] },
-      { name: "State Management & Optimization", level: 92, experienceYears: "5+ yrs", tags: ["Context API", "Zustand/Redux", "Memoization"] }
+      { name: "ReactJS", level: 80, experienceYears: "4+ yrs", highlight: true, tags: ["Hooks", "Custom Architecture", "Performance"] },
+      { name: "TypeScript", level: 70, experienceYears: "4+ yrs", highlight: true, tags: ["Strict Typing", "Interfaces", "Generics"] },
+      { name: "Modern JavaScript (ES6+)", level: 75, experienceYears: "4+ yrs", highlight: true, tags: ["Async/Await", "Event Loop"] },
+      { name: "Data Visualization Components", level: 80, experienceYears: "3+ yrs", highlight: true, tags: ["Analytics Dashboards", "Charts", "Real-Time"] },
+      { name: "HTML5 / Modern CSS3 / Tailwind", level: 90, experienceYears: "5+ yrs", tags: ["Responsive UI", "CSS Modules", "Tailwind"] }
     ]
   },
   {
@@ -109,12 +108,12 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
     iconName: "Database",
     description: "Architecting high-scale relational database schemas, complex SQL query execution plans, indexing strategies, and reliable transactional integrity.",
     skills: [
-      { name: "PostgreSQL (Heavy Relational)", level: 96, experienceYears: "6+ yrs", highlight: true, tags: ["Indexing", "EXPLAIN ANALYZE", "Partitioning"] },
-      { name: "SQLAlchemy & ORM Layering", level: 94, experienceYears: "5+ yrs", highlight: true, tags: ["Session Management", "Query Compilation"] },
-      { name: "Query Optimization & Tuning", level: 95, experienceYears: "5+ yrs", highlight: true, tags: ["Execution Plans", "Composite Indexes"] },
-      { name: "Advanced Data-Access Models", level: 92, experienceYears: "5+ yrs", tags: ["Repository Pattern", "CQRS", "Unit of Work"] },
-      { name: "MySQL & Relational Storage", level: 88, experienceYears: "5+ yrs", tags: ["ACID Compliance", "Schema Migrations"] },
-      { name: "Analytical & Financial Schemas", level: 94, experienceYears: "5+ yrs", highlight: true, tags: ["Aggregations", "Reporting Pipelines"] }
+      { name: "PostgreSQL (Heavy Relational)", level: 90, experienceYears: "5+ yrs", highlight: true, tags: ["Indexing", "EXPLAIN ANALYZE", "Partitioning"] },
+      { name: "SQLAlchemy & ORM Layering", level: 94, experienceYears: "4+ yrs", highlight: true, tags: ["Session Management", "Query Compilation"] },
+      { name: "Query Optimization", level: 85, experienceYears: "3+ yrs", highlight: true, tags: ["Execution Plans", "Composite Indexes"] },
+      { name: "Advanced Data-Access Models", level: 86, experienceYears: "5+ yrs", tags: ["Repository Pattern", "CQRS", "Unit of Work"] },
+      { name: "MySQL & Relational Storage", level: 90, experienceYears: "5+ yrs", tags: ["ACID Compliance", "Schema Migrations"] },
+      { name: "Analytical & Financial Schemas", level: 88, experienceYears: "3+ yrs", highlight: true, tags: ["Aggregations", "Reporting Pipelines"] }
     ]
   },
   {
@@ -123,10 +122,10 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
     iconName: "ShieldCheck",
     description: "Disciplined automated testing, CI/CD safety nets, containerized deployment workflows, and rigorous Agile engineering practices.",
     skills: [
-      { name: "Automated Testing (Pytest, Vitest)", level: 94, experienceYears: "5+ yrs", highlight: true, tags: ["TDD", "Integration Tests", "Mocking"] },
-      { name: "Continuous Refactoring", level: 96, experienceYears: "6+ yrs", highlight: true, tags: ["Clean Code", "Design Patterns", "Maintainability"] },
-      { name: "Docker & Containerization", level: 90, experienceYears: "4+ yrs", tags: ["Docker Compose", "Multi-stage Builds"] },
-      { name: "GCP & AWS Cloud Basics", level: 86, experienceYears: "4+ yrs", tags: ["Cloud Storage", "Deployments", "Serverless"] },
+      { name: "Automated Testing (Pytest, Vitest)", level: 80, experienceYears: "3+ yrs", highlight: true, tags: ["TDD", "Integration Tests", "Mocking"] },
+      { name: "Continuous Refactoring", level: 80, experienceYears: "3+ yrs", highlight: true, tags: ["Clean Code", "Design Patterns", "Maintainability"] },
+      { name: "Docker & Containerization", level: 88, experienceYears: "4+ yrs", tags: ["Docker Compose", "Multi-stage Builds"] },
+      { name: "GCP & AWS Cloud Basics", level: 86, experienceYears: "2+ yrs", tags: ["Cloud Storage", "Deployments", "Serverless"] },
       { name: "Git & GitHub CI Workflows", level: 95, experienceYears: "6+ yrs", tags: ["Branching", "Code Review", "Workflows"] },
       { name: "Agile / Scrum & Jira", level: 95, experienceYears: "6+ yrs", tags: ["Sprint Planning", "Backlog Refinement", "Retros"] }
     ]
