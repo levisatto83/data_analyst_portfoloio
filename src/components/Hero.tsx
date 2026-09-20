@@ -21,7 +21,7 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
   const [copiedEmail, setCopiedEmail] = useState(false);
-  const [activeTab, setActiveTab] = useState<'fastapi' | 'react' | 'sql'>('fastapi');
+  const [activeTab, setActiveTab] = useState<'bigquery' | 'n8n' | 'tableau'>('bigquery');
 
   const copyEmailToClipboard = () => {
     navigator.clipboard.writeText(PERSONAL_INFO.email);
@@ -56,7 +56,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
               </span>
-              <span className="text-emerald-400 font-semibold">Available for Senior Roles</span>
+              <span className="text-emerald-400 font-semibold">Available for Data Analyst Roles</span>
               <span className="text-slate-500">&bull;</span>
               <span className="text-slate-300">Remote / Hybrid / Relocation</span>
             </div>
@@ -69,17 +69,17 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
               
               <div className="flex flex-wrap items-center gap-2 pt-1">
                 <span className="text-lg sm:text-xl font-bold text-sky-400 tracking-wide font-mono">
-                  SENIOR FULL-STACK SOFTWARE ANALYST
+                  DATA ANALYST
                 </span>
                 <span className="px-2.5 py-0.5 rounded-md bg-indigo-500/10 text-indigo-300 border border-indigo-500/30 text-xs font-semibold">
-                  Python & ReactJS
+                  SQL & BigQuery
                 </span>
               </div>
             </div>
 
             {/* Short value proposition */}
             <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl font-normal">
-              Architecting resilient service-oriented backends in <strong className="text-sky-400 font-medium">Python (FastAPI, Django)</strong>, high-performance <strong className="text-cyan-300 font-medium">ReactJS & TypeScript</strong> analytics interfaces, and optimized <strong className="text-emerald-400 font-medium">PostgreSQL</strong> relational data layers with 6+ years of verified production delivery.
+              Building reliable <strong className="text-sky-400 font-medium">SQL and BigQuery</strong> analysis, automated <strong className="text-cyan-300 font-medium">n8n and Python data pipelines</strong>, and actionable <strong className="text-emerald-400 font-medium">Tableau / BI dashboards</strong> with 3+ years of hands-on analytics delivery.
             </p>
 
             {/* Location, Contact & Bilingual Indicators */}
@@ -123,7 +123,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
                 className="flex items-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-slate-950 bg-gradient-to-r from-emerald-400 via-teal-400 to-sky-400 hover:from-emerald-300 hover:to-sky-300 shadow-lg shadow-emerald-500/20 hover:shadow-emerald-500/30 transition-all text-sm cursor-pointer"
               >
                 <MessageSquare className="w-4 h-4" />
-                <span>Chat on WhatsApp</span>
+                <span>Connect on WhatsApp</span>
               </a>
 
               <button
@@ -177,112 +177,92 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
               {/* Tab Selector */}
               <div className="flex border-b border-slate-800 bg-slate-950/60 p-1.5 gap-1 text-xs">
                 <button
-                  onClick={() => setActiveTab('fastapi')}
+                  onClick={() => setActiveTab('bigquery')}
                   className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md font-mono transition-colors ${
-                    activeTab === 'fastapi'
+                    activeTab === 'bigquery'
                       ? 'bg-sky-500/20 text-sky-400 border border-sky-500/40'
                       : 'text-slate-400 hover:text-slate-200'
                   }`}
                 >
                   <Cpu className="w-3.5 h-3.5" />
-                  <span>FastAPI.py</span>
+                  <span>BigQuery.sql</span>
                 </button>
                 <button
-                  onClick={() => setActiveTab('react')}
+                  onClick={() => setActiveTab('n8n')}
                   className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md font-mono transition-colors ${
-                    activeTab === 'react'
+                    activeTab === 'n8n'
                       ? 'bg-sky-500/20 text-sky-400 border border-sky-500/40'
                       : 'text-slate-400 hover:text-slate-200'
                   }`}
                 >
                   <Code2 className="w-3.5 h-3.5" />
-                  <span>Analytics.tsx</span>
+                  <span>n8n.workflow</span>
                 </button>
                 <button
-                  onClick={() => setActiveTab('sql')}
+                  onClick={() => setActiveTab('tableau')}
                   className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md font-mono transition-colors ${
-                    activeTab === 'sql'
+                    activeTab === 'tableau'
                       ? 'bg-sky-500/20 text-sky-400 border border-sky-500/40'
                       : 'text-slate-400 hover:text-slate-200'
                   }`}
                 >
                   <Database className="w-3.5 h-3.5" />
-                  <span>PostgreSQL.sql</span>
+                  <span>Tableau.kpi</span>
                 </button>
               </div>
 
               {/* Code Panel */}
               <div className="p-4 font-mono text-xs text-left bg-[#070b12] overflow-x-auto min-h-[320px]">
-                {activeTab === 'fastapi' && (
+                {activeTab === 'bigquery' && (
                   <div className="space-y-1.5 text-slate-300">
-                    <div className="text-slate-500"># High-throughput Financial & Analytics Service</div>
-                    <div><span className="text-purple-400">from</span> fastapi <span className="text-purple-400">import</span> FastAPI, Depends, status</div>
-                    <div><span className="text-purple-400">from</span> sqlalchemy.ext.asyncio <span className="text-purple-400">import</span> AsyncSession</div>
-                    <div><span className="text-purple-400">from</span> app.schemas <span className="text-purple-400">import</span> FinancialReportResponse</div>
-                    <div className="pt-1"><span className="text-emerald-400">app</span> = FastAPI(title=<span className="text-amber-300">"Analytics SOA Engine"</span>)</div>
-                    <div className="pt-2 text-sky-400">@app.get(</div>
-                    <div className="pl-4"><span className="text-amber-300">"/api/v1/analytics/financial"</span>,</div>
-                    <div className="pl-4">response_model=FinancialReportResponse</div>
-                    <div className="text-sky-400">)</div>
-                    <div><span className="text-purple-400">async def</span> <span className="text-yellow-300">get_financial_metrics</span>(</div>
-                    <div className="pl-4">db: AsyncSession = Depends(get_db_session)</div>
-                    <div>):</div>
-                    <div className="pl-4 text-slate-500"># Optimized SQL execution under 35ms</div>
-                    <div className="pl-4 text-slate-300">report = <span className="text-purple-400">await</span> repo.fetch_aggregate_metrics(db)</div>
-                    <div className="pl-4"><span className="text-purple-400">return</span> <span className="text-slate-300">&#123;</span></div>
-                    <div className="pl-8"><span className="text-amber-300">"status"</span>: <span className="text-amber-300">"success"</span>,</div>
-                    <div className="pl-8"><span className="text-amber-300">"data"</span>: report,</div>
-                    <div className="pl-8"><span className="text-amber-300">"latency_ms"</span>: <span className="text-teal-400">28.4</span></div>
-                    <div className="pl-4 text-slate-300">&#125;</div>
+                    <div className="text-slate-500">-- BigQuery reporting and reconciliation query</div>
+                    <div><span className="text-purple-400">WITH</span> source_totals <span className="text-purple-400">AS</span> (</div>
+                    <div className="pl-4"><span className="text-purple-400">SELECT</span> account_id, <span className="text-purple-400">SUM</span>(amount) <span className="text-purple-400">AS</span> source_total</div>
+                    <div className="pl-4"><span className="text-purple-400">FROM</span> `<span className="text-amber-300">analytics.raw_transactions</span>`</div>
+                    <div className="pl-4"><span className="text-purple-400">WHERE</span> event_date <span className="text-purple-400">BETWEEN</span> <span className="text-amber-300">'2025-08-01'</span> <span className="text-purple-400">AND</span> <span className="text-amber-300">'2025-08-31'</span></div>
+                    <div className="pl-4"><span className="text-purple-400">GROUP BY</span> account_id</div>
+                    <div>), reconciled <span className="text-purple-400">AS</span> (</div>
+                    <div className="pl-4"><span className="text-purple-400">SELECT</span> account_id, source_total, ledger_total,</div>
+                    <div className="pl-4">ABS(source_total - ledger_total) <span className="text-purple-400">AS</span> variance</div>
+                    <div className="pl-4"><span className="text-purple-400">FROM</span> `analytics.reconciliation_view`</div>
+                    <div>) <span className="text-purple-400">SELECT</span> * <span className="text-purple-400">FROM</span> reconciled <span className="text-purple-400">WHERE</span> variance &gt; <span className="text-teal-400">0.01</span>;</div>
                   </div>
                 )}
 
-                {activeTab === 'react' && (
+                {activeTab === 'n8n' && (
                   <div className="space-y-1.5 text-slate-300">
-                    <div className="text-slate-500">// Interactive React + TypeScript Visualization</div>
-                    <div><span className="text-purple-400">import</span> React, &#123; useMemo, useState &#125; <span className="text-purple-400">from</span> <span className="text-amber-300">'react'</span>;</div>
-                    <div><span className="text-purple-400">import</span> &#123; useQuery &#125; <span className="text-purple-400">from</span> <span className="text-amber-300">'@tanstack/react-query'</span>;</div>
-                    <div className="pt-2"><span className="text-purple-400">export const</span> <span className="text-yellow-300">FinancialDashboard</span>: React.FC = () =&gt; &#123;</div>
-                    <div className="pl-4">const &#123; data, isLoading &#125; = useQuery(&#123;</div>
-                    <div className="pl-8">queryKey: [<span className="text-amber-300">'analytics'</span>],</div>
-                    <div className="pl-8">queryFn: fetchFinancialReport</div>
-                    <div className="pl-4">&#125;);</div>
-                    <div className="pl-4 pt-1"><span className="text-purple-400">const</span> kpiSummary = useMemo(() =&gt; computeKPIs(data), [data]);</div>
-                    <div className="pl-4 pt-1"><span className="text-purple-400">return</span> (</div>
-                    <div className="pl-8 text-sky-400">&lt;<span className="text-emerald-400">AnalyticalGrid</span> data=&#123;kpiSummary&#125; liveStream=&#123;<span className="text-teal-400">true</span>&#125;&gt;</div>
-                    <div className="pl-12 text-sky-400">&lt;<span className="text-emerald-400">MetricChart</span> type=<span className="text-amber-300">"realtime-timeseries"</span> /&gt;</div>
-                    <div className="pl-8 text-sky-400">&lt;/<span className="text-emerald-400">AnalyticalGrid</span>&gt;</div>
-                    <div className="pl-4">);</div>
-                    <div>&#125;;</div>
+                    <div className="text-slate-500">// n8n ingestion workflow: API → transform → validate</div>
+                    <div><span className="text-purple-400">TRIGGER</span> Schedule: every <span className="text-teal-400">15 minutes</span></div>
+                    <div><span className="text-purple-400">NODE</span> HTTP Request: fetch CRM transactions</div>
+                    <div><span className="text-purple-400">NODE</span> Python: normalize dates and currencies</div>
+                    <div><span className="text-purple-400">NODE</span> BigQuery: append staging records</div>
+                    <div><span className="text-purple-400">NODE</span> Data Quality: reconcile source totals</div>
+                    <div><span className="text-purple-400">NODE</span> OpenAI: classify exception notes</div>
+                    <div><span className="text-purple-400">NODE</span> Slack: notify owner when variance &gt; 1%</div>
+                    <div className="pt-2 text-emerald-400">Workflow status: healthy &bull; 30+ automated processes monitored</div>
                   </div>
                 )}
 
-                {activeTab === 'sql' && (
+                {activeTab === 'tableau' && (
                   <div className="space-y-1.5 text-slate-300">
-                    <div className="text-slate-500">-- High-Performance PostgreSQL Execution Plan</div>
-                    <div><span className="text-purple-400">CREATE INDEX CONCURRENTLY IF NOT EXISTS</span></div>
-                    <div className="pl-4">idx_financial_transactions_tenant_date</div>
-                    <div className="pl-4"><span className="text-purple-400">ON</span> operational_ledger (tenant_id, created_at <span className="text-purple-400">DESC</span>)</div>
-                    <div className="pl-4"><span className="text-purple-400">INCLUDE</span> (amount, currency, status);</div>
-                    <div className="pt-2 text-slate-500">-- Query latency: 450ms -&gt; 18ms (96% speedup)</div>
-                    <div><span className="text-purple-400">EXPLAIN ANALYZE</span></div>
-                    <div><span className="text-purple-400">SELECT</span></div>
-                    <div className="pl-4">DATE_TRUNC(<span className="text-amber-300">'day'</span>, created_at) <span className="text-purple-400">AS</span> tx_date,</div>
-                    <div className="pl-4">SUM(amount) <span className="text-purple-400">AS</span> daily_volume,</div>
-                    <div className="pl-4">COUNT(*) <span className="text-purple-400">AS</span> tx_count</div>
-                    <div><span className="text-purple-400">FROM</span> operational_ledger</div>
-                    <div><span className="text-purple-400">WHERE</span> tenant_id = <span className="text-teal-400">8421</span> <span className="text-purple-400">AND</span> status = <span className="text-amber-300">'SETTLED'</span></div>
-                    <div><span className="text-purple-400">GROUP BY</span> 1 <span className="text-purple-400">ORDER BY</span> 1 <span className="text-purple-400">DESC</span>;</div>
+                    <div className="text-slate-500">// Tableau executive KPI view</div>
+                    <div><span className="text-purple-400">DASHBOARD</span> Sales & Operational Performance</div>
+                    <div><span className="text-purple-400">FILTER</span> Reporting period: current quarter</div>
+                    <div><span className="text-purple-400">KPI</span> Revenue: <span className="text-emerald-400">+12.8%</span> vs prior period</div>
+                    <div><span className="text-purple-400">KPI</span> Pipeline conversion: <span className="text-teal-400">24.6%</span></div>
+                    <div><span className="text-purple-400">KPI</span> Data freshness: <span className="text-emerald-400">99.4%</span></div>
+                    <div><span className="text-purple-400">ALERT</span> 3 accounts require reconciliation review</div>
+                    <div className="pt-2 text-slate-500">Report refresh completed from validated BigQuery tables.</div>
                   </div>
                 )}
               </div>
 
               {/* Status bar */}
               <div className="px-4 py-2 bg-slate-900 border-t border-slate-800 flex items-center justify-between text-[11px] text-slate-400 font-mono">
-                <span className="flex items-center gap-1 text-emerald-400">
-                  <CheckCircle2 className="w-3.5 h-3.5" /> Pytest & Vitest: 100% Passing
+                  <span className="flex items-center gap-1 text-emerald-400">
+                  <CheckCircle2 className="w-3.5 h-3.5" /> Data checks: 99%+ accuracy
                 </span>
-                <span className="text-slate-400">6+ Years Production Track</span>
+                <span className="text-slate-400">3+ Years Analytics Track</span>
               </div>
             </div>
           </div>

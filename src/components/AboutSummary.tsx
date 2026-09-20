@@ -14,32 +14,32 @@ export const AboutSummary: React.FC = () => {
   const pillars = [
     {
       icon: Cpu,
-      title: "Full-Stack Python & React Architecture",
-      description: "6+ years architecting end-to-end applications, resilient microservices with FastAPI/Django/Flask, and reactive TypeScript/React frontends built for scale.",
+      title: "SQL & BigQuery Analysis",
+      description: "Advanced SQL querying, BigQuery reporting, relational data modeling, reconciliation, and quality checks for trustworthy business metrics.",
       color: "from-sky-500/20 to-blue-500/10",
       iconColor: "text-sky-400",
       borderColor: "border-sky-500/20"
     },
     {
       icon: Database,
-      title: "Deep PostgreSQL & Data Modeling",
-      description: "Heavy relational database engineering, advanced query tuning, composite indexing, and transactional/analytical schema designs for financial and operational data.",
+      title: "ETL / ELT Pipeline Automation",
+      description: "Automated extraction and transformation workflows using n8n, Python, Pandas, NumPy, Playwright, and REST API integrations.",
       color: "from-emerald-500/20 to-teal-500/10",
       iconColor: "text-emerald-400",
       borderColor: "border-emerald-500/20"
     },
     {
       icon: ShieldCheck,
-      title: "Quality, Testing & Refactoring",
-      description: "Automated test suites with Pytest and Vitest, continuous code refactoring for high maintainability, and strict adherence to Agile/Scrum standards.",
+      title: "Dashboards & KPI Reporting",
+      description: "Tableau and BI reporting that turns sales, operational, and executive metrics into clear trends, exceptions, and next actions.",
       color: "from-purple-500/20 to-indigo-500/10",
       iconColor: "text-purple-400",
       borderColor: "border-purple-500/20"
     },
     {
       icon: Globe2,
-      title: "Bilingual International Collaboration",
-      description: "C2 Native-equivalent English and C2 Spanish proficiency with extensive cross-functional experience across Brazilian tech centers and global remote teams.",
+      title: "AI-Assisted Analytics",
+      description: "Practical use of ChatGPT, Claude, OpenAI API, and prompt engineering to accelerate log parsing, sentiment analysis, and classification workflows.",
       color: "from-amber-500/20 to-orange-500/10",
       iconColor: "text-amber-400",
       borderColor: "border-amber-500/20"
@@ -57,10 +57,10 @@ export const AboutSummary: React.FC = () => {
             <span>Professional Summary</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Architecting Resilient Systems from Data Model to User Interface
+            Making Business Data Reliable, Useful, and Actionable
           </h2>
           <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
-            Bridging complex backend business logic, high-volume database performance, and reactive user experiences.
+            Connecting extraction, data quality, analysis, and reporting so teams can make decisions with confidence.
           </p>
         </div>
 
@@ -72,7 +72,7 @@ export const AboutSummary: React.FC = () => {
             <div className="lg:col-span-8 text-left space-y-4">
               <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-sky-400 font-semibold">
                 <Workflow className="w-4 h-4" />
-                <span>Executive Summary &bull; 6+ Years Industry Experience</span>
+                <span>Executive Summary &bull; 3+ Years Data Experience</span>
               </div>
               <p className="text-slate-200 text-base sm:text-lg leading-relaxed font-normal">
                 "{PERSONAL_INFO.summaryText}"
@@ -122,7 +122,7 @@ export const AboutSummary: React.FC = () => {
 
                 <div className="pt-4 mt-4 border-t border-slate-800/80 flex items-center text-[11px] font-semibold text-slate-400 gap-1.5">
                   <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
-                  <span>Production Tested</span>
+                  <span>Applied in Production</span>
                 </div>
               </div>
             );

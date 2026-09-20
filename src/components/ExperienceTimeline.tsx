@@ -20,13 +20,13 @@ export const ExperienceTimeline: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto space-y-3 mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-xs font-semibold text-indigo-400 uppercase tracking-wider">
             <Briefcase className="w-3.5 h-3.5" />
-            <span>Career Progression</span>
+            <span>Analytics Career Progression</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Professional Experience & Track Record
+            Data Analyst Experience & Track Record
           </h2>
           <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
-            Delivering high-value systems, scalable APIs, and performance-tuned data architectures across senior engineering positions.
+            Delivering reliable pipelines, reconciled datasets, operational insights, and KPI reporting across data-focused roles.
           </p>
         </div>
 

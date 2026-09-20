@@ -21,8 +21,8 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenResume }) 
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    subject: 'Senior Full-Stack Opportunity / Project Collaboration',
-    message: 'Hi Levi, I reviewed your experience in Python (FastAPI/Django) and ReactJS/PostgreSQL and would like to discuss an opportunity.'
+    subject: 'Data Analyst Opportunity / Project Collaboration',
+    message: 'Hi Levi, I reviewed your experience in SQL, BigQuery, n8n, and data pipelines and would like to discuss an opportunity.'
   });
   const [sentStatus, setSentStatus] = useState<string | null>(null);
 
@@ -55,10 +55,10 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenResume }) 
             <span>Direct Communication</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Let's Discuss Architecture & Next-Level Engineering
+            Let's Discuss Data, Reporting & Automation
           </h2>
           <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
-            Reach out directly for senior full-stack positions, backend architecture consulting, or high-throughput data engineering roles.
+            Reach out about Data Analyst roles, reporting improvements, pipeline automation, or analytics projects.
           </p>
         </div>
 

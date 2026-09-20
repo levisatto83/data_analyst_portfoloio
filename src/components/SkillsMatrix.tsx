@@ -65,10 +65,10 @@ export const SkillsMatrix: React.FC = () => {
             <span>Technical Qualifications</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Production-Tested Skills & Engineering Stack
+            Data Analytics Skills & Technical Stack
           </h2>
           <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
-            Technologies, frameworks, and architecture patterns battle-tested in mission-critical environments.
+            Practical tools for extracting, validating, transforming, visualizing, and governing business data.
           </p>
         </div>
 

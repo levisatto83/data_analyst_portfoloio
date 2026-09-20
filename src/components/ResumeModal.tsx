@@ -14,7 +14,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
 
   const handleCopyMarkdown = () => {
     const md = `# Levi Satto Siedschlag
-SENIOR FULL-STACK SOFTWARE ANALYST (PYTHON & REACTJS)
+DATA ANALYST (SQL / BIGQUERY / N8N / DATA PIPELINES)
 
 ${PERSONAL_INFO.phone} | ${PERSONAL_INFO.email} | ${PERSONAL_INFO.location}
 Languages: English (C2 Proficient / Native-level) | Spanish (C2 Proficient)
@@ -25,10 +25,10 @@ ${PERSONAL_INFO.summaryText}
 
 ## TECHNICAL QUALIFICATIONS
 ---
-- Backend Engineering: Python (5+ years: Flask, FastAPI, Django), Service-Oriented Architecture (SOA), Microservices, REST APIs, Complex Business Logic
-- Frontend Engineering: Modern JavaScript (ES6+), TypeScript, ReactJS, Interactive Web Applications, Data Visualization Components, HTML5/CSS3
-- Data Access & Storage: Relational Databases (Heavy PostgreSQL, MySQL), Advanced Data-Access Models, SQLAlchemy, Query Optimization, Transactional & Analytical Schemas
-- Quality, Agile & DevOps: Automated Testing (Pytest, Vitest), Continuous Refactoring, Agile/Scrum Methodologies, GCP, AWS, Docker, Git/GitHub, Jira
+- Data Extraction & SQL: Advanced SQL, Google BigQuery, PostgreSQL, MySQL, Data Reconciliation & Quality Assurance
+- ETL & Automation: n8n Workflow Automation, Automated ETL/ELT Pipelines, Python (Pandas/NumPy), REST API Integrations
+- Visualization & Reporting: Tableau, Sales & Operational Performance Dashboards, Executive Metrics Tracking
+- Cloud & AI Workflow: GCP, AWS (Lambda, SQS, SNS), Git/GitHub, Linux, ChatGPT, Claude, OpenAI API, Prompt Engineering, Data Governance
 
 ## PROFESSIONAL EXPERIENCE
 ---
@@ -100,7 +100,7 @@ ${EDUCATIONS.map(edu => `- **${edu.degree}** — ${edu.level}
               Levi Satto Siedschlag
             </h1>
             <p className="text-sm font-bold text-sky-400 uppercase tracking-wide">
-              SENIOR FULL-STACK SOFTWARE ANALYST (PYTHON & REACTJS)
+              DATA ANALYST (SQL / BIGQUERY / N8N / DATA PIPELINES)
             </p>
             <div className="flex flex-wrap items-center gap-4 text-xs text-slate-300 pt-1">
               <span>{PERSONAL_INFO.phone}</span>
@@ -131,20 +131,20 @@ ${EDUCATIONS.map(edu => `- **${edu.degree}** — ${edu.level}
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
               <div className="p-3 rounded-lg bg-slate-950/60 border border-slate-800 space-y-1">
-                <div className="font-bold text-white">Backend Engineering</div>
-                <div className="text-slate-300">Python (5+ years: Flask, FastAPI, Django), Service-Oriented Architecture (SOA), Microservices, REST APIs, Complex Business Logic</div>
+                <div className="font-bold text-white">Data Extraction & SQL</div>
+                <div className="text-slate-300">Advanced SQL, Google BigQuery, PostgreSQL, MySQL, Data Reconciliation & Quality Assurance</div>
               </div>
               <div className="p-3 rounded-lg bg-slate-950/60 border border-slate-800 space-y-1">
-                <div className="font-bold text-white">Frontend Engineering</div>
-                <div className="text-slate-300">Modern JavaScript (ES6+), TypeScript, ReactJS, Interactive Web Applications, Data Visualization Components, HTML5/CSS3</div>
+                <div className="font-bold text-white">ETL & Automation</div>
+                <div className="text-slate-300">n8n Workflow Automation, Automated ETL/ELT Pipelines, Python (Pandas/NumPy), REST API Integrations</div>
               </div>
               <div className="p-3 rounded-lg bg-slate-950/60 border border-slate-800 space-y-1">
-                <div className="font-bold text-white">Data Access & Storage</div>
-                <div className="text-slate-300">Relational Databases (Heavy PostgreSQL, MySQL), Advanced Data-Access Models, SQLAlchemy, Query Optimization, Transactional & Analytical Schemas</div>
+                <div className="font-bold text-white">Visualization & Reporting</div>
+                <div className="text-slate-300">Tableau, sales and operational performance dashboards, automated reporting feeds, and executive metric tracking</div>
               </div>
               <div className="p-3 rounded-lg bg-slate-950/60 border border-slate-800 space-y-1">
-                <div className="font-bold text-white">Quality, Agile & DevOps</div>
-                <div className="text-slate-300">Automated Testing (Pytest, Vitest), Continuous Refactoring, Agile/Scrum Methodologies, GCP, AWS, Docker, Git/GitHub, Jira</div>
+                <div className="font-bold text-white">Cloud, AI & Governance</div>
+                <div className="text-slate-300">GCP, AWS Lambda/SQS/SNS, Git/GitHub, Linux, ChatGPT, Claude, OpenAI API, prompt engineering, and data governance</div>
               </div>
             </div>
           </div>

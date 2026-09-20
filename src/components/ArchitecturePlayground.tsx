@@ -19,112 +19,102 @@ interface SimulatedResponse {
 }
 
 export const ArchitecturePlayground: React.FC = () => {
-  const [selectedEndpoint, setSelectedEndpoint] = useState<'financial' | 'geospatial' | 'queryTuning'>('financial');
+  const [selectedEndpoint, setSelectedEndpoint] = useState<'reconciliation' | 'ingestion' | 'quality'>('reconciliation');
   const [isLoading, setIsLoading] = useState(false);
   const [lastExecution, setLastExecution] = useState<SimulatedResponse>({
-    endpoint: '/api/v1/analytics/financial-summary?tenant_id=8421&period=Q3',
+    endpoint: 'bigquery://analytics/reconciliation?period=2025-Q3',
     method: 'GET',
     status: 200,
     durationMs: 24.8,
-    sqlOptimization: 'Index Scan on idx_financial_transactions_tenant_date (Cost: 12.4..35.8, Latency: 24.8ms)',
+    sqlOptimization: 'Partition filter on event_date (Bytes processed: 184 MB, Query time: 24.8s)',
     payload: {
-      tenant_id: "8421",
-      currency: "USD",
       reporting_window: "2025-Q3",
-      total_settled_volume: 4892410.50,
-      active_accounts: 1842,
-      velocity_tps: 342.6,
-      cache_hit: true,
+      source_total: 4892410.50,
+      ledger_total: 4889640.10,
+      variance: 2770.40,
+      data_quality_status: "REVIEW_REQUIRED",
       execution_breakdown: {
-        db_fetch_ms: 18.2,
-        serialization_ms: 4.1,
-        network_transport_ms: 2.5
+        source_rows: 184200,
+        reconciled_rows: 183942,
+        exceptions: 258
       }
     }
   });
 
   const endpoints = [
     {
-      id: 'financial',
-      title: 'Financial Analytics Microservice',
-      path: '/api/v1/analytics/financial-summary',
-      description: 'Asynchronous FastAPI service aggregating multi-tenant financial reporting ledgers.',
-      stack: ['FastAPI', 'SQLAlchemy Async', 'PostgreSQL', 'Pydantic v2'],
+      id: 'reconciliation',
+      title: 'BigQuery Reconciliation',
+      path: 'bigquery://analytics/reconciliation',
+      description: 'Compare source and ledger totals, surface variances, and publish trusted reporting tables.',
+      stack: ['BigQuery SQL', 'Data Quality', 'GCP', 'Reporting'],
       generate: () => ({
-        endpoint: '/api/v1/analytics/financial-summary?tenant_id=8421&period=Q3',
+        endpoint: 'bigquery://analytics/reconciliation?period=2025-Q3',
         method: 'GET' as const,
         status: 200,
         durationMs: Math.floor(Math.random() * 12) + 20,
-        sqlOptimization: 'Index Scan on idx_financial_transactions_tenant_date (Cost: 12.4..35.8, Latency: 24.8ms)',
+        sqlOptimization: 'Partition filter on event_date (Bytes processed: 184 MB, Query time: 24.8s)',
         payload: {
-          tenant_id: "8421",
-          currency: "USD",
           reporting_window: "2025-Q3",
-          total_settled_volume: (Math.random() * 1000000 + 4000000).toFixed(2),
-          active_accounts: 1842 + Math.floor(Math.random() * 50),
-          velocity_tps: (320 + Math.random() * 40).toFixed(1),
-          integrity_verified: true,
+          source_total: (Math.random() * 1000000 + 4000000).toFixed(2),
+          ledger_total: (Math.random() * 1000000 + 3998000).toFixed(2),
+          variance: (Math.random() * 4000).toFixed(2),
+          data_quality_status: "REVIEW_REQUIRED",
           execution_breakdown: {
-            db_fetch_ms: (16 + Math.random() * 5).toFixed(1),
-            serialization_ms: (3 + Math.random() * 2).toFixed(1),
-            network_transport_ms: (2 + Math.random() * 1).toFixed(1)
+            source_rows: 184200,
+            reconciled_rows: 183942,
+            exceptions: 258
           }
         }
       })
     },
     {
-      id: 'geospatial',
-      title: 'Geospatial Fleet Routing & Telemetry',
-      path: '/api/v1/logistics/geospatial-routes',
-      description: 'Here API integration pipeline transforming GPS telemetry coordinates into optimized routes.',
-      stack: ['Python', 'Here API', 'PostgreSQL PostGIS/Geospatial', 'Async Workers'],
+      id: 'ingestion',
+      title: 'n8n API Ingestion',
+      path: 'n8n://workflows/external-api-ingestion',
+      description: 'Extract external API data, normalize it with Python, and load validated records into BigQuery.',
+      stack: ['n8n', 'Python', 'REST API', 'BigQuery'],
       generate: () => ({
-        endpoint: '/api/v1/logistics/geospatial-routes?cluster=BR-SUL&units=48',
+        endpoint: 'n8n://workflows/external-api-ingestion?run=latest',
         method: 'GET' as const,
         status: 200,
         durationMs: Math.floor(Math.random() * 15) + 32,
-        sqlOptimization: 'Spatial index GiST on geom_location (94% speedup vs sequential table scan)',
+        sqlOptimization: 'Incremental load with duplicate-key validation (30+ processes monitored)',
         payload: {
-          region_cluster: "BR-SUL-Florianopolis",
-          active_fleet_units: 48,
-          optimized_routes_computed: 112,
-          eta_variance_percentage: -14.2,
-          telemetry_status: "SYNCHRONIZED",
-          waypoints: [
-            { id: "WP-01", lat: -27.5949, lon: -48.5482, status: "DISPATCHED" },
-            { id: "WP-02", lat: -27.6012, lon: -48.5390, status: "IN_TRANSIT" },
-            { id: "WP-03", lat: -27.6150, lon: -48.5520, status: "DELIVERED" }
-          ]
+          workflow: "external-api-ingestion",
+          records_received: 18420,
+          records_loaded: 18392,
+          records_rejected: 28,
+          pipeline_status: "SYNCHRONIZED",
+          validation_rules: ["schema", "required_fields", "duplicate_key"]
         }
       })
     },
     {
-      id: 'queryTuning',
-      title: 'PostgreSQL EXPLAIN ANALYZE Optimization',
-      path: '/api/v1/database/explain-analyze',
-      description: 'Relational query tuning comparing unindexed seq scan vs composite indexed execution.',
-      stack: ['PostgreSQL 16', 'Composite Indexing', 'EXPLAIN ANALYZE', 'Cost Optimization'],
+      id: 'quality',
+      title: 'Pipeline Quality Monitor',
+      path: 'quality://monitoring/pipeline-health',
+      description: 'Monitor freshness, completeness, variance, and exception rates across automated reporting processes.',
+      stack: ['Data Quality', 'Reconciliation', 'Monitoring', 'Alerts'],
       generate: () => ({
-        endpoint: '/api/v1/database/explain-analyze?table=operational_ledger',
-        method: 'POST' as const,
+        endpoint: 'quality://monitoring/pipeline-health?scope=all',
+        method: 'GET' as const,
         status: 200,
         durationMs: 18.5,
-        sqlOptimization: 'Seq Scan (480ms / Cost 14200) -> Bitmap Index Scan (18.5ms / Cost 240) [96% Reduction]',
+        sqlOptimization: 'Freshness SLA: 99.4% | Completeness: 99.1% | Exceptions routed to owners',
         payload: {
-          table: "operational_ledger",
-          records_scanned: 1540200,
-          raw_query_latency_ms: 480.2,
-          optimized_query_latency_ms: 18.5,
-          speedup_factor: "26.0x faster",
-          indexing_strategy: "idx_operational_tenant_created (tenant_id, created_at DESC) INCLUDE (amount)",
-          buffer_hit_rate: "99.8%",
-          lock_contention: "0.0%"
+          monitored_processes: 30,
+          healthy_processes: 28,
+          review_required: 2,
+          freshness_sla: "99.4%",
+          completeness: "99.1%",
+          next_refresh: "15 minutes"
         }
       })
     }
   ];
 
-  const handleRunSimulation = (endpointId: 'financial' | 'geospatial' | 'queryTuning') => {
+  const handleRunSimulation = (endpointId: 'reconciliation' | 'ingestion' | 'quality') => {
     setSelectedEndpoint(endpointId);
     setIsLoading(true);
 
@@ -145,13 +135,13 @@ export const ArchitecturePlayground: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto space-y-3 mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-xs font-semibold text-cyan-400 uppercase tracking-wider">
             <Cpu className="w-3.5 h-3.5" />
-            <span>Interactive Architecture & Performance Lab</span>
+            <span>Interactive Data Operations Lab</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Live Service Architecture & Query Visualizer
+            Live Pipeline, Query & KPI Visualizer
           </h2>
           <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
-            Test simulated backend endpoints, verify PostgreSQL execution optimization, and inspect payload serialization.
+            Inspect simulated data workflows, verify reconciliation logic, and preview the metrics surfaced to stakeholders.
           </p>
         </div>
 
@@ -192,13 +182,13 @@ export const ArchitecturePlayground: React.FC = () => {
               <div className="w-3 h-3 rounded-full bg-amber-500" />
               <div className="w-3 h-3 rounded-full bg-emerald-500" />
               <span className="font-mono text-xs sm:text-sm font-semibold text-white ml-2">
-                FastAPI Async Engine &bull; PostgreSQL 16
+                Analytics Pipeline Console &bull; BigQuery / n8n
               </span>
             </div>
 
             <div className="flex items-center gap-3 text-xs font-mono">
               <span className="flex items-center gap-1.5 text-emerald-400">
-                <CheckCircle2 className="w-4 h-4" /> Service Healthy
+                <CheckCircle2 className="w-4 h-4" /> Pipeline Healthy
               </span>
               <span className="text-slate-500">|</span>
               <span className="text-sky-400 font-semibold flex items-center gap-1">
@@ -212,7 +202,7 @@ export const ArchitecturePlayground: React.FC = () => {
             {/* Left Control Column: Endpoints selector */}
             <div className="lg:col-span-4 p-5 bg-slate-950/80 border-b lg:border-b-0 lg:border-r border-slate-800 space-y-3">
               <div className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">
-                Select Service Endpoint:
+                Select Data Workflow:
               </div>
 
               {endpoints.map((ep) => {
@@ -279,7 +269,7 @@ export const ArchitecturePlayground: React.FC = () => {
               <div className="p-3 rounded-lg bg-slate-900/60 border border-slate-800 flex items-start gap-2.5 text-xs">
                 <Database className="w-4 h-4 text-emerald-400 mt-0.5 shrink-0" />
                 <div className="space-y-0.5">
-                  <div className="font-semibold text-white">PostgreSQL Execution Plan Analysis:</div>
+                  <div className="font-semibold text-white">Data Quality & Query Analysis:</div>
                   <div className="font-mono text-slate-300 text-[11px] leading-relaxed">
                     {lastExecution.sqlOptimization}
                   </div>
