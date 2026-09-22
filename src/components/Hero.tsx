@@ -21,7 +21,7 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
   const [copiedEmail, setCopiedEmail] = useState(false);
-  const [activeTab, setActiveTab] = useState<'bigquery' | 'n8n' | 'tableau'>('bigquery');
+  const [activeTab, setActiveTab] = useState<'support' | 'diagnostics' | 'llm'>('support');
 
   const copyEmailToClipboard = () => {
     navigator.clipboard.writeText(PERSONAL_INFO.email);
@@ -56,7 +56,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
               </span>
-              <span className="text-emerald-400 font-semibold">Available for Data Analyst Roles</span>
+              <span className="text-emerald-400 font-semibold">Available for Systems Analyst Roles</span>
               <span className="text-slate-500">&bull;</span>
               <span className="text-slate-300">Remote / Hybrid / Relocation</span>
             </div>
@@ -69,17 +69,17 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
               
               <div className="flex flex-wrap items-center gap-2 pt-1">
                 <span className="text-lg sm:text-xl font-bold text-sky-400 tracking-wide font-mono">
-                  DATA ANALYST
+                  SYSTEMS ANALYST
                 </span>
                 <span className="px-2.5 py-0.5 rounded-md bg-indigo-500/10 text-indigo-300 border border-indigo-500/30 text-xs font-semibold">
-                  SQL & BigQuery
+                  AI-DRIVEN SUPPORT
                 </span>
               </div>
             </div>
 
             {/* Short value proposition */}
             <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl font-normal">
-              Building reliable <strong className="text-sky-400 font-medium">SQL and BigQuery</strong> analysis, automated <strong className="text-cyan-300 font-medium">n8n and Python data pipelines</strong>, and actionable <strong className="text-emerald-400 font-medium">Tableau / BI dashboards</strong> with 3+ years of hands-on analytics delivery.
+              Solving complex <strong className="text-sky-400 font-medium">production incidents</strong>, automating technical workflows with <strong className="text-cyan-300 font-medium">Python and AI</strong>, and keeping web systems, APIs, and support operations reliable.
             </p>
 
             {/* Location, Contact & Bilingual Indicators */}
@@ -110,7 +110,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
 
               <div className="flex items-center gap-2.5 p-2.5 rounded-lg bg-slate-900/60 border border-slate-800">
                 <Globe className="w-4 h-4 text-indigo-400 shrink-0" />
-                <span className="truncate">English (C2 Native) & Spanish (C2)</span>
+                <span className="truncate">English (C2) & Spanish (C2)</span>
               </div>
             </div>
 
@@ -177,45 +177,45 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
               {/* Tab Selector */}
               <div className="flex border-b border-slate-800 bg-slate-950/60 p-1.5 gap-1 text-xs">
                 <button
-                  onClick={() => setActiveTab('bigquery')}
+                  onClick={() => setActiveTab('support')}
                   className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md font-mono transition-colors ${
-                    activeTab === 'bigquery'
+                    activeTab === 'support'
                       ? 'bg-sky-500/20 text-sky-400 border border-sky-500/40'
                       : 'text-slate-400 hover:text-slate-200'
                   }`}
                 >
                   <Cpu className="w-3.5 h-3.5" />
-                  <span>BigQuery.sql</span>
+                  <span>support.py</span>
                 </button>
                 <button
-                  onClick={() => setActiveTab('n8n')}
+                  onClick={() => setActiveTab('diagnostics')}
                   className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md font-mono transition-colors ${
-                    activeTab === 'n8n'
+                    activeTab === 'diagnostics'
                       ? 'bg-sky-500/20 text-sky-400 border border-sky-500/40'
                       : 'text-slate-400 hover:text-slate-200'
                   }`}
                 >
                   <Code2 className="w-3.5 h-3.5" />
-                  <span>n8n.workflow</span>
+                  <span>diagnostics.sql</span>
                 </button>
                 <button
-                  onClick={() => setActiveTab('tableau')}
+                  onClick={() => setActiveTab('llm')}
                   className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md font-mono transition-colors ${
-                    activeTab === 'tableau'
+                    activeTab === 'llm'
                       ? 'bg-sky-500/20 text-sky-400 border border-sky-500/40'
                       : 'text-slate-400 hover:text-slate-200'
                   }`}
                 >
                   <Database className="w-3.5 h-3.5" />
-                  <span>Tableau.kpi</span>
+                  <span>llm.workflow</span>
                 </button>
               </div>
 
               {/* Code Panel */}
               <div className="p-4 font-mono text-xs text-left bg-[#070b12] overflow-x-auto min-h-[320px]">
-                {activeTab === 'bigquery' && (
+                {activeTab === 'support' && (
                   <div className="space-y-1.5 text-slate-300">
-                    <div className="text-slate-500">-- BigQuery reporting and reconciliation query</div>
+                    <div className="text-slate-500">-- Python support automation routine</div>
                     <div><span className="text-purple-400">WITH</span> source_totals <span className="text-purple-400">AS</span> (</div>
                     <div className="pl-4"><span className="text-purple-400">SELECT</span> account_id, <span className="text-purple-400">SUM</span>(amount) <span className="text-purple-400">AS</span> source_total</div>
                     <div className="pl-4"><span className="text-purple-400">FROM</span> `<span className="text-amber-300">analytics.raw_transactions</span>`</div>
@@ -229,13 +229,13 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
                   </div>
                 )}
 
-                {activeTab === 'n8n' && (
+                {activeTab === 'diagnostics' && (
                   <div className="space-y-1.5 text-slate-300">
-                    <div className="text-slate-500">// n8n ingestion workflow: API → transform → validate</div>
+                    <div className="text-slate-500">// Incident workflow: API -&gt; diagnose -&gt; document</div>
                     <div><span className="text-purple-400">TRIGGER</span> Schedule: every <span className="text-teal-400">15 minutes</span></div>
                     <div><span className="text-purple-400">NODE</span> HTTP Request: fetch CRM transactions</div>
                     <div><span className="text-purple-400">NODE</span> Python: normalize dates and currencies</div>
-                    <div><span className="text-purple-400">NODE</span> BigQuery: append staging records</div>
+                    <div><span className="text-purple-400">NODE</span> OpenAI: summarize incident context</div>
                     <div><span className="text-purple-400">NODE</span> Data Quality: reconcile source totals</div>
                     <div><span className="text-purple-400">NODE</span> OpenAI: classify exception notes</div>
                     <div><span className="text-purple-400">NODE</span> Slack: notify owner when variance &gt; 1%</div>
@@ -243,16 +243,16 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
                   </div>
                 )}
 
-                {activeTab === 'tableau' && (
+                {activeTab === 'llm' && (
                   <div className="space-y-1.5 text-slate-300">
-                    <div className="text-slate-500">// Tableau executive KPI view</div>
+                    <div className="text-slate-500">// LLM-assisted technical support view</div>
                     <div><span className="text-purple-400">DASHBOARD</span> Sales & Operational Performance</div>
                     <div><span className="text-purple-400">FILTER</span> Reporting period: current quarter</div>
                     <div><span className="text-purple-400">KPI</span> Revenue: <span className="text-emerald-400">+12.8%</span> vs prior period</div>
                     <div><span className="text-purple-400">KPI</span> Pipeline conversion: <span className="text-teal-400">24.6%</span></div>
                     <div><span className="text-purple-400">KPI</span> Data freshness: <span className="text-emerald-400">99.4%</span></div>
                     <div><span className="text-purple-400">ALERT</span> 3 accounts require reconciliation review</div>
-                    <div className="pt-2 text-slate-500">Report refresh completed from validated BigQuery tables.</div>
+                    <div className="pt-2 text-slate-500">Support guidance prepared for technical review.</div>
                   </div>
                 )}
               </div>

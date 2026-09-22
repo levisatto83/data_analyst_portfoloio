@@ -14,32 +14,32 @@ export const AboutSummary: React.FC = () => {
   const pillars = [
     {
       icon: Cpu,
-      title: "SQL & BigQuery Analysis",
-      description: "Advanced SQL querying, BigQuery reporting, relational data modeling, reconciliation, and quality checks for trustworthy business metrics.",
+      title: "Complex Troubleshooting",
+      description: "Evidence-driven diagnosis of production bugs, API failures, logs, and system integration issues.",
       color: "from-sky-500/20 to-blue-500/10",
       iconColor: "text-sky-400",
       borderColor: "border-sky-500/20"
     },
     {
       icon: Database,
-      title: "ETL / ELT Pipeline Automation",
-      description: "Automated extraction and transformation workflows using n8n, Python, Pandas, NumPy, Playwright, and REST API integrations.",
+      title: "Python & AI Automation",
+      description: "RPAs, scripting, OpenAI API integrations, and LLM workflows that reduce repetitive support work.",
       color: "from-emerald-500/20 to-teal-500/10",
       iconColor: "text-emerald-400",
       borderColor: "border-emerald-500/20"
     },
     {
       icon: ShieldCheck,
-      title: "Dashboards & KPI Reporting",
-      description: "Tableau and BI reporting that turns sales, operational, and executive metrics into clear trends, exceptions, and next actions.",
+      title: "Systems & Cloud Operations",
+      description: "Maintenance and support for web applications, APIs, databases, Docker, Linux, GCP, and AWS environments.",
       color: "from-purple-500/20 to-indigo-500/10",
       iconColor: "text-purple-400",
       borderColor: "border-purple-500/20"
     },
     {
       icon: Globe2,
-      title: "AI-Assisted Analytics",
-      description: "Practical use of ChatGPT, Claude, OpenAI API, and prompt engineering to accelerate log parsing, sentiment analysis, and classification workflows.",
+      title: "Technical Enablement",
+      description: "Clear documentation, knowledge bases, onboarding, training, and intercultural communication for users and teams.",
       color: "from-amber-500/20 to-orange-500/10",
       iconColor: "text-amber-400",
       borderColor: "border-amber-500/20"
@@ -57,10 +57,10 @@ export const AboutSummary: React.FC = () => {
             <span>Professional Summary</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Making Business Data Reliable, Useful, and Actionable
+            Making Complex Systems Easier to Support
           </h2>
           <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
-            Connecting extraction, data quality, analysis, and reporting so teams can make decisions with confidence.
+            Combining technical troubleshooting, automation, and communication to keep systems dependable and users productive.
           </p>
         </div>
 
@@ -72,7 +72,7 @@ export const AboutSummary: React.FC = () => {
             <div className="lg:col-span-8 text-left space-y-4">
               <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-sky-400 font-semibold">
                 <Workflow className="w-4 h-4" />
-                <span>Executive Summary &bull; 3+ Years Data Experience</span>
+                <span>Executive Summary &bull; 6 Years Technical Experience</span>
               </div>
               <p className="text-slate-200 text-base sm:text-lg leading-relaxed font-normal">
                 "{PERSONAL_INFO.summaryText}"

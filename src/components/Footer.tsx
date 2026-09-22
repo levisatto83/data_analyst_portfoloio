@@ -23,7 +23,7 @@ export const Footer: React.FC = () => {
               </span>
             </div>
             <p className="text-xs text-slate-400 max-w-md font-mono">
-              Data Analyst &bull; SQL / BigQuery &bull; n8n &bull; Data Pipelines &bull; Tableau
+              Systems Analyst &bull; Python / SQL &bull; AI Automation &bull; Technical Support
             </p>
           </div>
 

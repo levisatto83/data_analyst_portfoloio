@@ -15,73 +15,59 @@ interface SimulatedResponse {
   status: number;
   durationMs: number;
   sqlOptimization: string;
-  payload: any;
+  payload: Record<string, unknown>;
 }
 
 export const ArchitecturePlayground: React.FC = () => {
   const [selectedEndpoint, setSelectedEndpoint] = useState<'reconciliation' | 'ingestion' | 'quality'>('reconciliation');
   const [isLoading, setIsLoading] = useState(false);
   const [lastExecution, setLastExecution] = useState<SimulatedResponse>({
-    endpoint: 'bigquery://analytics/reconciliation?period=2025-Q3',
+    endpoint: 'openai://support/incident-diagnosis?ticket=latest',
     method: 'GET',
     status: 200,
     durationMs: 24.8,
-    sqlOptimization: 'Partition filter on event_date (Bytes processed: 184 MB, Query time: 24.8s)',
+    sqlOptimization: 'Log context parsed and incident evidence grouped for technical review',
     payload: {
-      reporting_window: "2025-Q3",
-      source_total: 4892410.50,
-      ledger_total: 4889640.10,
-      variance: 2770.40,
-      data_quality_status: "REVIEW_REQUIRED",
-      execution_breakdown: {
-        source_rows: 184200,
-        reconciled_rows: 183942,
-        exceptions: 258
-      }
+      incident_type: "PRODUCTION_API_ERROR",
+      root_cause_confidence: "HIGH",
+      recommended_action: "Review timeout configuration and deploy KB guidance"
     }
   });
 
   const endpoints = [
     {
       id: 'reconciliation',
-      title: 'BigQuery Reconciliation',
-      path: 'bigquery://analytics/reconciliation',
-      description: 'Compare source and ledger totals, surface variances, and publish trusted reporting tables.',
-      stack: ['BigQuery SQL', 'Data Quality', 'GCP', 'Reporting'],
+      title: 'AI Incident Diagnosis',
+      path: 'openai://support/incident-diagnosis',
+      description: 'Parse logs, analyze incident context, and generate structured root-cause guidance for technical review.',
+      stack: ['OpenAI API', 'Python', 'Log Analysis', 'NLP'],
       generate: () => ({
-        endpoint: 'bigquery://analytics/reconciliation?period=2025-Q3',
+        endpoint: 'openai://support/incident-diagnosis?ticket=latest',
         method: 'GET' as const,
         status: 200,
-        durationMs: Math.floor(Math.random() * 12) + 20,
-        sqlOptimization: 'Partition filter on event_date (Bytes processed: 184 MB, Query time: 24.8s)',
+        durationMs: 24.8,
+        sqlOptimization: 'Log context parsed and incident evidence grouped for technical review',
         payload: {
-          reporting_window: "2025-Q3",
-          source_total: (Math.random() * 1000000 + 4000000).toFixed(2),
-          ledger_total: (Math.random() * 1000000 + 3998000).toFixed(2),
-          variance: (Math.random() * 4000).toFixed(2),
-          data_quality_status: "REVIEW_REQUIRED",
-          execution_breakdown: {
-            source_rows: 184200,
-            reconciled_rows: 183942,
-            exceptions: 258
-          }
+          incident_type: "PRODUCTION_API_ERROR",
+          root_cause_confidence: "HIGH",
+          recommended_action: "Review timeout configuration and deploy KB guidance"
         }
       })
     },
     {
       id: 'ingestion',
-      title: 'n8n API Ingestion',
-      path: 'n8n://workflows/external-api-ingestion',
-      description: 'Extract external API data, normalize it with Python, and load validated records into BigQuery.',
-      stack: ['n8n', 'Python', 'REST API', 'BigQuery'],
+      title: 'Python Support Automation',
+      path: 'python://rpa/support-automation',
+      description: 'Run repeatable support tasks, validate system data, and reduce manual operational work with Python.',
+      stack: ['Python', 'RPAs', 'SQL', 'APIs'],
       generate: () => ({
-        endpoint: 'n8n://workflows/external-api-ingestion?run=latest',
+        endpoint: 'python://rpa/support-automation?run=latest',
         method: 'GET' as const,
         status: 200,
-        durationMs: Math.floor(Math.random() * 15) + 32,
-        sqlOptimization: 'Incremental load with duplicate-key validation (30+ processes monitored)',
+        durationMs: 38,
+        sqlOptimization: 'Repeatable support tasks validated across 30+ monitored processes',
         payload: {
-          workflow: "external-api-ingestion",
+          workflow: "support-automation",
           records_received: 18420,
           records_loaded: 18392,
           records_rejected: 28,
@@ -92,23 +78,22 @@ export const ArchitecturePlayground: React.FC = () => {
     },
     {
       id: 'quality',
-      title: 'Pipeline Quality Monitor',
-      path: 'quality://monitoring/pipeline-health',
-      description: 'Monitor freshness, completeness, variance, and exception rates across automated reporting processes.',
-      stack: ['Data Quality', 'Reconciliation', 'Monitoring', 'Alerts'],
+      title: 'Support Knowledge Monitor',
+      path: 'kb://support/quality-monitor',
+      description: 'Monitor incident categories, documentation coverage, and escalation quality across support workflows.',
+      stack: ['Knowledge Base', 'Monitoring', 'Jira', 'Documentation'],
       generate: () => ({
-        endpoint: 'quality://monitoring/pipeline-health?scope=all',
+        endpoint: 'kb://support/quality-monitor?scope=all',
         method: 'GET' as const,
         status: 200,
         durationMs: 18.5,
-        sqlOptimization: 'Freshness SLA: 99.4% | Completeness: 99.1% | Exceptions routed to owners',
+        sqlOptimization: 'Documentation coverage: 94% | Escalations routed to owners',
         payload: {
-          monitored_processes: 30,
-          healthy_processes: 28,
+          monitored_workflows: 30,
+          documented_workflows: 28,
           review_required: 2,
-          freshness_sla: "99.4%",
-          completeness: "99.1%",
-          next_refresh: "15 minutes"
+          documentation_coverage: "94%",
+          next_review: "15 minutes"
         }
       })
     }
@@ -135,13 +120,13 @@ export const ArchitecturePlayground: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto space-y-3 mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-xs font-semibold text-cyan-400 uppercase tracking-wider">
             <Cpu className="w-3.5 h-3.5" />
-            <span>Interactive Data Operations Lab</span>
+            <span>Interactive Technical Support Lab</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Live Pipeline, Query & KPI Visualizer
+            Live Incident, Automation & Knowledge Base Visualizer
           </h2>
           <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
-            Inspect simulated data workflows, verify reconciliation logic, and preview the metrics surfaced to stakeholders.
+            Inspect simulated support workflows, review incident evidence, and preview the guidance surfaced to technical teams.
           </p>
         </div>
 
@@ -182,7 +167,7 @@ export const ArchitecturePlayground: React.FC = () => {
               <div className="w-3 h-3 rounded-full bg-amber-500" />
               <div className="w-3 h-3 rounded-full bg-emerald-500" />
               <span className="font-mono text-xs sm:text-sm font-semibold text-white ml-2">
-                Analytics Pipeline Console &bull; BigQuery / n8n
+                Technical Support Console &bull; Python / OpenAI API
               </span>
             </div>
 
@@ -202,7 +187,7 @@ export const ArchitecturePlayground: React.FC = () => {
             {/* Left Control Column: Endpoints selector */}
             <div className="lg:col-span-4 p-5 bg-slate-950/80 border-b lg:border-b-0 lg:border-r border-slate-800 space-y-3">
               <div className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">
-                Select Data Workflow:
+                Select Support Workflow:
               </div>
 
               {endpoints.map((ep) => {
@@ -210,7 +195,7 @@ export const ArchitecturePlayground: React.FC = () => {
                 return (
                   <button
                     key={ep.id}
-                    onClick={() => handleRunSimulation(ep.id as any)}
+                    onClick={() => handleRunSimulation(ep.id as 'reconciliation' | 'ingestion' | 'quality')}
                     className={`w-full text-left p-3.5 rounded-xl transition-all cursor-pointer border ${
                       isSelected
                         ? 'bg-sky-500/15 border-sky-500/50 shadow-md shadow-sky-950/50'
@@ -269,7 +254,7 @@ export const ArchitecturePlayground: React.FC = () => {
               <div className="p-3 rounded-lg bg-slate-900/60 border border-slate-800 flex items-start gap-2.5 text-xs">
                 <Database className="w-4 h-4 text-emerald-400 mt-0.5 shrink-0" />
                 <div className="space-y-0.5">
-                  <div className="font-semibold text-white">Data Quality & Query Analysis:</div>
+                  <div className="font-semibold text-white">Incident & Workflow Analysis:</div>
                   <div className="font-mono text-slate-300 text-[11px] leading-relaxed">
                     {lastExecution.sqlOptimization}
                   </div>
@@ -279,7 +264,7 @@ export const ArchitecturePlayground: React.FC = () => {
               {/* JSON Payload viewer */}
               <div className="space-y-1.5">
                 <div className="flex items-center justify-between text-xs font-mono text-slate-400">
-                  <span>Response Payload (JSON):</span>
+                  <span>Support Response Payload (JSON):</span>
                   <span>Content-Type: application/json</span>
                 </div>
                 <div className="p-4 rounded-xl bg-slate-950 border border-slate-800 font-mono text-xs text-emerald-400 overflow-x-auto max-h-64">

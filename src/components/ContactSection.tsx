@@ -21,8 +21,8 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenResume }) 
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    subject: 'Data Analyst Opportunity / Project Collaboration',
-    message: 'Hi Levi, I reviewed your experience in SQL, BigQuery, n8n, and data pipelines and would like to discuss an opportunity.'
+    subject: 'Systems Analyst Opportunity / Technical Support Collaboration',
+    message: 'Hi Levi, I reviewed your experience in systems analysis, technical support, Python automation, and AI workflows and would like to discuss an opportunity.'
   });
   const [sentStatus, setSentStatus] = useState<string | null>(null);
 
@@ -55,10 +55,10 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenResume }) 
             <span>Direct Communication</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Let's Discuss Data, Reporting & Automation
+            Let's Discuss Systems, Support & Automation
           </h2>
           <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
-            Reach out about Data Analyst roles, reporting improvements, pipeline automation, or analytics projects.
+            Reach out about Systems Analyst roles, technical support, workflow automation, or AI-enabled operations.
           </p>
         </div>
 
@@ -125,13 +125,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenResume }) 
                 <div className="text-xs font-semibold text-slate-400 uppercase tracking-wider">Language Fluency</div>
                 <div className="flex flex-wrap gap-2">
                   <span className="text-xs px-2.5 py-1 rounded-md bg-slate-900 text-slate-200 border border-slate-800 font-mono">
-                    🇬🇧 English: C2 Native
+                    English: C2 Proficient
                   </span>
                   <span className="text-xs px-2.5 py-1 rounded-md bg-slate-900 text-slate-200 border border-slate-800 font-mono">
-                    🇪🇸 Spanish: C2 Fluent
+                    Spanish: C2 Proficient
                   </span>
                   <span className="text-xs px-2.5 py-1 rounded-md bg-slate-900 text-slate-200 border border-slate-800 font-mono">
-                    🇧🇷 Portuguese: Professional
                   </span>
                 </div>
               </div>

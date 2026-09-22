@@ -29,13 +29,7 @@ export interface SkillCategory {
   title: string;
   iconName: string;
   description: string;
-  skills: {
-    name: string;
-    level: number; // 1-100
-    experienceYears: string;
-    highlight?: boolean;
-    tags: string[];
-  }[];
+  skills: { name: string; level: number; experienceYears: string; highlight?: boolean; tags: string[] }[];
 }
 
 export interface ArchitectureHighlight {
@@ -51,203 +45,72 @@ export interface ArchitectureHighlight {
 export const PERSONAL_INFO = {
   name: "Levi Satto Siedschlag",
   shortName: "Levi Satto",
-  title: "Data Analyst",
-  specialization: "SQL, BigQuery, n8n & Data Pipelines",
-  tagline: "Turning messy operational data into reliable pipelines, reconciled metrics, and decision-ready dashboards with 3+ years of hands-on analytics experience.",
-  location: "Florianópolis, SC, Brazil",
-  phone: "+48 98832-1762",
-  cleanPhone: "48988321762",
+  title: "Systems Analyst",
+  specialization: "AI Automation, Technical Support & Systems Maintenance",
+  tagline: "Solving complex systems problems, automating technical workflows, and turning difficult incidents into reliable operations.",
+  location: "Ciudad del Este, Paraguay",
+  phone: "+595 (971) 759369",
+  cleanPhone: "595971759369",
   email: "levisatto@gmail.com",
-  whatsappUrl: "https://wa.me/48988321762?text=Hi%20Levi,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect!",
+  whatsappUrl: "https://wa.me/595971759369?text=Hi%20Levi,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect!",
   languages: [
-    { name: "English", level: "C2 Proficient / Native-level", badge: "C2 Native Equivalent", description: "Bilingual technical communication, architecture reviews, global team collaboration" },
-    { name: "Spanish", level: "C2 Proficient", badge: "C2 Fluent", description: "Native/bilingual regional stakeholder alignment & documentation" },
-    { name: "Portuguese", level: "Professional Working Proficiency", badge: "Fluent", description: "Full professional proficiency across Brazilian tech hubs (Florianópolis)" }
+    { name: "English", level: "C2 Proficient", badge: "C2", description: "Technical communication, documentation, training, and support" },
+    { name: "Spanish", level: "C2 Proficient", badge: "C2", description: "Customer support, user onboarding, and intercultural communication" }
   ],
   stats: [
-    { label: "Analytics Experience", value: "3+", highlight: "Data & Systems" },
-    { label: "Primary SQL", value: "BigQuery", highlight: "Advanced Queries" },
-    { label: "Workflow Automation", value: "n8n", highlight: "ETL / ELT Pipelines" },
-    { label: "Reporting", value: "Tableau", highlight: "Executive KPIs" },
+    { label: "Technical Experience", value: "6 yrs", highlight: "Systems & Support" },
+    { label: "Automation", value: "Python", highlight: "RPAs / Scripting" },
+    { label: "Cloud", value: "GCP / AWS", highlight: "Production Systems" },
+    { label: "AI Workflows", value: "LLMs", highlight: "OpenAI API / NLP" }
   ],
-  summaryText: "Data Analyst and Systems Professional with over 3 years of hands-on experience in data extraction, transformation (ETL/ELT), automated pipelines, and analytics. Highly skilled in writing and optimizing complex SQL queries in BigQuery, building workflow automations with n8n, and designing actionable performance dashboards with Tableau and BI tools. Proven track record of monitoring pipeline health, ensuring strict data quality and reconciliation, and leveraging AI tools such as ChatGPT and Claude to accelerate analysis and development. Fluent in English with international project experience and a dedicated remote setup."
+  summaryText: "Systems Analyst with 6 years of technical experience, specializing in complex troubleshooting, systems maintenance, specialized technical support, and AI-driven automation. Deep proficiency in Python, SQL (PostgreSQL/MySQL), cloud environments (GCP/AWS), and integrating Large Language Models to streamline workflows. Experienced with customer and user support, Jira, Zendesk, Hinc, and generative AI tools including ChatGPT, Claude, and the OpenAI API."
 };
 
 export const SKILL_CATEGORIES: SkillCategory[] = [
-  {
-    id: "sql-data",
-    title: "SQL & Data Analysis",
-    iconName: "Server",
-    description: "Advanced querying, reconciliation, quality checks, and analytical data modeling for reliable business reporting.",
-    skills: [
-      { name: "Advanced SQL", level: 96, experienceYears: "3+ yrs", highlight: true, tags: ["CTEs", "Window Functions", "Aggregations"] },
-      { name: "Google BigQuery", level: 94, experienceYears: "3+ yrs", highlight: true, tags: ["Partitioning", "Clustering", "Cost Control"] },
-      { name: "PostgreSQL & MySQL", level: 90, experienceYears: "4+ yrs", highlight: true, tags: ["Joins", "Indexes", "Relational Models"] },
-      { name: "Data Reconciliation", level: 95, experienceYears: "3+ yrs", highlight: true, tags: ["Quality Checks", "Variance Analysis"] },
-      { name: "Data Quality Assurance", level: 94, experienceYears: "3+ yrs", tags: ["Validation", "Completeness", "Accuracy"] },
-      { name: "Analytical Data Modeling", level: 88, experienceYears: "3+ yrs", tags: ["Fact Tables", "Dimensions", "KPI Logic"] }
-    ]
-  },
-  {
-    id: "pipelines",
-    title: "ETL, ELT & Automation",
-    iconName: "Layout",
-    description: "Automated extraction and transformation workflows that move trustworthy data from APIs and operational systems into reporting layers.",
-    skills: [
-      { name: "n8n Workflow Automation", level: 95, experienceYears: "3+ yrs", highlight: true, tags: ["Triggers", "Nodes", "Retries"] },
-      { name: "Automated ETL / ELT Pipelines", level: 94, experienceYears: "3+ yrs", highlight: true, tags: ["Scheduling", "Transformations", "Monitoring"] },
-      { name: "Python for Data (Pandas / NumPy)", level: 92, experienceYears: "3+ yrs", highlight: true, tags: ["Cleaning", "Feature Prep", "Batch Jobs"] },
-      { name: "REST API Integrations", level: 90, experienceYears: "3+ yrs", tags: ["Pagination", "Auth", "Rate Limits"] },
-      { name: "Playwright Data Extraction", level: 84, experienceYears: "2+ yrs", tags: ["Browser Automation", "Structured Capture"] }
-    ]
-  },
-  {
-    id: "visualization",
-    title: "Visualization & Reporting",
-    iconName: "Database",
-    description: "Clear dashboards and reporting feeds that translate operational performance into metrics stakeholders can act on.",
-    skills: [
-      { name: "Tableau", level: 90, experienceYears: "3+ yrs", highlight: true, tags: ["Dashboards", "Filters", "Calculated Fields"] },
-      { name: "Sales Performance Dashboards", level: 92, experienceYears: "3+ yrs", highlight: true, tags: ["Pipeline Metrics", "Conversion", "Targets"] },
-      { name: "Operational KPI Reporting", level: 94, experienceYears: "3+ yrs", highlight: true, tags: ["Executive Metrics", "Trend Analysis"] },
-      { name: "Automated Reporting Feeds", level: 90, experienceYears: "3+ yrs", tags: ["Refreshes", "Distribution", "Alerts"] },
-      { name: "Data Storytelling", level: 86, experienceYears: "3+ yrs", tags: ["Context", "Prioritization", "Recommendations"] }
-    ]
-  },
-  {
-    id: "cloud-ai",
-    title: "Cloud, AI & Data Governance",
-    iconName: "ShieldCheck",
-    description: "Cloud-based analytics foundations, versioned workflows, AI-assisted analysis, and disciplined handling of governed data.",
-    skills: [
-      { name: "Google Cloud Platform", level: 88, experienceYears: "3+ yrs", highlight: true, tags: ["BigQuery", "Cloud Storage", "Monitoring"] },
-      { name: "AWS Lambda / SQS / SNS", level: 80, experienceYears: "2+ yrs", tags: ["Event Automation", "Queues", "Notifications"] },
-      { name: "AI-Assisted Analytics", level: 93, experienceYears: "2+ yrs", highlight: true, tags: ["ChatGPT", "Claude", "OpenAI API"] },
-      { name: "Prompt Engineering", level: 90, experienceYears: "2+ yrs", tags: ["Structured Outputs", "Evaluation", "Automation"] },
-      { name: "Git / GitHub & Linux", level: 92, experienceYears: "4+ yrs", tags: ["Version Control", "Code Review", "CLI"] },
-      { name: "Data Governance", level: 84, experienceYears: "3+ yrs", tags: ["Access Controls", "Documentation", "Traceability"] }
-    ]
-  }
+  { id: "ai-automation", title: "AI & Automation", iconName: "Sparkles", description: "LLM-powered workflows and Python automation that reduce repetitive support work and accelerate technical investigation.", skills: [
+    { name: "OpenAI API", level: 94, experienceYears: "3+ yrs", highlight: true, tags: ["GPT-4", "Embeddings", "API Integration"] },
+    { name: "Prompt Engineering", level: 92, experienceYears: "3+ yrs", highlight: true, tags: ["Structured Output", "Evaluation", "Workflow Design"] },
+    { name: "Python Automation", level: 95, experienceYears: "6+ yrs", highlight: true, tags: ["RPAs", "Scripting", "Task Automation"] },
+    { name: "NLP & Log Parsing", level: 88, experienceYears: "3+ yrs", tags: ["Classification", "Sentiment Analysis", "Diagnostics"] }
+  ] },
+  { id: "troubleshooting-data", title: "Troubleshooting & Data", iconName: "Search", description: "Evidence-driven incident diagnosis, API debugging, database operations, and reliable data validation.", skills: [
+    { name: "Log Analysis", level: 96, experienceYears: "6+ yrs", highlight: true, tags: ["Root Cause", "Monitoring", "Incident Response"] },
+    { name: "Advanced SQL", level: 91, experienceYears: "6+ yrs", highlight: true, tags: ["T-SQL", "PostgreSQL", "MySQL"] },
+    { name: "API Debugging", level: 92, experienceYears: "4+ yrs", tags: ["REST", "FastAPI", "Integrations"] },
+    { name: "ETL & Data Validation", level: 86, experienceYears: "4+ yrs", tags: ["Pipelines", "Quality Checks", "Data Operations"] }
+  ] },
+  { id: "support-workflows", title: "Support & Workflows", iconName: "Ticket", description: "Structured technical support, ticket management, documentation, training, and clear communication with users and teams.", skills: [
+    { name: "Jira Service Management", level: 94, experienceYears: "6+ yrs", highlight: true, tags: ["Tickets", "SLAs", "Incident Management"] },
+    { name: "Zendesk & Hinc", level: 90, experienceYears: "4+ yrs", tags: ["Customer Support", "Queues", "Escalation"] },
+    { name: "Technical Documentation", level: 94, experienceYears: "6+ yrs", highlight: true, tags: ["Knowledge Bases", "Troubleshooting Guides", "Manuals"] },
+    { name: "Technical Training", level: 95, experienceYears: "9+ yrs", tags: ["Onboarding", "Instruction", "User Enablement"] }
+  ] },
+  { id: "systems-infrastructure", title: "Systems & Infrastructure", iconName: "Server", description: "Hands-on maintenance and support across operating systems, containers, cloud environments, and modern web applications.", skills: [
+    { name: "Linux / Bash", level: 90, experienceYears: "6+ yrs", highlight: true, tags: ["Terminal", "Scripting", "Operations"] },
+    { name: "GCP & AWS", level: 84, experienceYears: "4+ yrs", tags: ["Cloud Monitoring", "Services", "Deployments"] },
+    { name: "FastAPI & Django", level: 86, experienceYears: "4+ yrs", highlight: true, tags: ["Python", "APIs", "Web Systems"] },
+    { name: "Docker & Windows Server", level: 82, experienceYears: "4+ yrs", tags: ["Containers", "Maintenance", "Administration"] },
+    { name: "JavaScript & React", level: 78, experienceYears: "3+ yrs", tags: ["Front-end Support", "Debugging", "UI Systems"] }
+  ] }
 ];
 
+const experience = (id: string, role: string, company: string, period: string, startDate: string, endDate: string, summary: string, achievements: string[], techStack: string[], metrics: { label: string; value: string }[]): ExperienceItem => ({ id, role, company, location: "Paraguay", period, startDate, endDate, type: "Full-time", summary, achievements, techStack, metrics });
+
 export const EXPERIENCES: ExperienceItem[] = [
-  {
-    id: "npu-gestao",
-    role: "Data & Backend Analyst",
-    company: "NPU Gestão e Tecnologia",
-    location: "Florianópolis, Brazil",
-    period: "August 2023 – September 2025",
-    startDate: "2023-08",
-    endDate: "2025-09",
-    type: "Full-time",
-    summary: "Built reliable extraction, transformation, reconciliation, and reporting workflows for structured and unstructured business data.",
-    achievements: [
-      "Authored and optimized high-performance SQL queries and data pipelines on Google Cloud Platform (GCP) to process structured and unstructured datasets.",
-      "Designed and executed automated ETL workflows using n8n and Python, integrating external service APIs and reducing manual data processing overhead.",
-      "Built end-to-end monitoring routines and data reconciliation checks to identify pipeline anomalies, ensuring 99%+ data accuracy for business reporting.",
-      "Leveraged ChatGPT, Claude, and the OpenAI API to automate log parsing, sentiment analysis, and text classification workflows."
-    ],
-    techStack: ["SQL", "BigQuery", "GCP", "n8n", "Python", "Pandas", "NumPy", "REST APIs", "Data Reconciliation", "AI Tools"],
-    metrics: [
-      { label: "Pipeline Accuracy", value: "99%+" },
-      { label: "Primary Platform", value: "GCP / BigQuery" },
-      { label: "Automation", value: "n8n + Python" }
-    ]
-  },
-  {
-    id: "ja-holding",
-    role: "Systems & Data Analyst",
-    company: "J&A Holding",
-    location: "Florianópolis, Brazil",
-    period: "March 2022 – July 2023",
-    startDate: "2022-03",
-    endDate: "2023-07",
-    type: "Full-time",
-    summary: "Maintained data health across automated extraction processes, reporting feeds, and relational repositories used by internal stakeholders.",
-    achievements: [
-      "Modeled relational databases and created automated extraction scripts using Playwright and Python to collect and ingest data into central repositories.",
-      "Developed automated reporting feeds, data validation routines, and system architecture documentation to maintain data health across 30+ automated processes.",
-      "Utilized Git and GitHub for strict version control, code reviews, and collaborative pipeline deployments."
-    ],
-    techStack: ["SQL", "Python", "Playwright", "PostgreSQL", "ETL", "Data Validation", "Git", "GitHub", "Reporting Feeds"],
-    metrics: [
-      { label: "Automated Processes", value: "30+" },
-      { label: "Focus", value: "Data Health" },
-      { label: "Workflow", value: "Extract → Validate" }
-    ]
-  },
-  {
-    id: "transportta",
-    role: "Data & Web Developer",
-    company: "Transportta",
-    location: "Remote",
-    period: "October 2019 – February 2022",
-    startDate: "2019-10",
-    endDate: "2022-02",
-    type: "Remote",
-    summary: "Delivered logistics analytics, data transformations, geospatial routing metrics, and KPI reporting for operational decision-making.",
-    achievements: [
-      "Led technical operations for logistics analytics, developing custom data pipelines and geospatial routing metrics.",
-      "Created automated data transformation scripts using Python (Pandas/NumPy) and SQL, delivering operational insights and KPI reports to management."
-    ],
-    techStack: ["Python", "Pandas", "NumPy", "SQL", "PostgreSQL", "Here API", "Data Pipelines", "KPI Reporting"],
-    metrics: [
-      { label: "Domain", value: "Logistics Analytics" },
-      { label: "Outputs", value: "KPI Reports" },
-      { label: "Automation", value: "Python + SQL" }
-    ]
-  }
+  experience("npu-gestao", "Systems Analyst / Tier 3 Support", "NPU Gestão e Tecnologia", "August 2023 – September 2025", "2023-08", "2025-09", "Advanced technical support and maintenance for web applications and APIs, combining Python troubleshooting with AI-driven automation.", ["Provided advanced technical support and maintenance for web applications and APIs, using OpenAI API and generative AI tools to automate log parsing, sentiment analysis, and incident root-cause diagnosis.", "Diagnosed and resolved complex production bugs using FastAPI, Python, and cloud monitoring tools.", "Developed Python scripts (RPAs) and AI-powered workflow automations to reduce repetitive support tasks and significantly lower resolution times.", "Authored technical documentation and AI-assisted troubleshooting guides for the internal Knowledge Base (KB)."], ["Python", "FastAPI", "OpenAI API", "LLMs", "Log Analysis", "Cloud Monitoring", "Knowledge Base"], [{ label: "Support Level", value: "Tier 3" }, { label: "Focus", value: "Production Systems" }, { label: "Automation", value: "Python + AI" }]),
+  experience("ja-holding", "Systems Analyst / Tier 3 Support", "J&A Holding", "March 2022 – July 2023", "2022-03", "2023-07", "Maintained mission-critical RPAs, web crawlers, automated workflows, and the data operations behind them.", ["Monitored and maintained over 30 mission-critical RPAs, web crawlers, and automated data workflows.", "Provided specialized technical support for systems integration, data pipelines, and database operations.", "Leveraged automated scripts and advanced SQL optimizations to eliminate operational bottlenecks and improve cost efficiency.", "Developed internal applications to monitor, analyze, and control system cost efficiency."], ["Python", "SQL", "PostgreSQL", "MySQL", "RPAs", "Web Crawlers", "Data Pipelines"], [{ label: "Automated Systems", value: "30+" }, { label: "Support Level", value: "Tier 3" }, { label: "Focus", value: "Cost Efficiency" }]),
+  experience("transportta", "Systems Analyst / Tier 1 Customer Support", "Transportta", "October 2019 – February 2022", "2019-10", "2022-02", "Managed user incidents and served as the technical bridge between customers and development teams for logistics systems.", ["Managed tickets and incidents directly via the Jira platform, ensuring strict SLA compliance.", "Acted as the primary technical liaison between end-users and the development team.", "Provided specialized support for web systems, routing tools, and geospatial API integrations.", "Conducted user onboarding, training sessions, and authored comprehensive system manuals."], ["Jira", "Customer Support", "Web Systems", "Routing Tools", "Geospatial APIs", "Technical Training"], [{ label: "Support Level", value: "Tier 1" }, { label: "Workflow", value: "Jira + SLA" }, { label: "Role", value: "Technical Liaison" }]),
+  experience("wizard", "Coordinator / Language Instructor", "Wizard Language School", "January 2010 – December 2018", "2010-01", "2018-12", "Combined language instruction, academic coordination, progress evaluation, and faculty development.", ["Taught English and Spanish across all age groups and proficiency levels.", "Managed academic schedules, conducted progress evaluations, and led faculty training."], ["English", "Spanish", "Instruction", "Coordination", "Faculty Training"], [{ label: "Focus", value: "Training & Communication" }]),
+  experience("vipal", "Polymers and Pressure Vessels Technician", "Vipal - AR", "January 2005 – December 2009", "2005-01", "2009-12", "Supported customers through technical after-sales follow-up, inspections, and product handling instruction.", ["Provided technical after-sales follow-up and inspections for rubber-based products.", "Conducted on-site product handling and usage training."], ["Technical Inspection", "After-sales Support", "Product Training"], [{ label: "Focus", value: "Technical Support" }])
 ];
 
 export const EDUCATIONS: EducationItem[] = [
-  {
-    id: "mba-nlp",
-    degree: "MBA in Data Analysis and Natural Language Processing (NLP)",
-    level: "Post-graduate Degree",
-    institution: "Anhanguera University",
-    location: "Florianópolis, SC, Brazil",
-    completedDate: "Completed: 01/2026",
-    description: "Advanced post-graduate specialization focused on statistical modeling, Natural Language Processing pipelines, text classification, and large-scale data analysis.",
-    tags: ["Natural Language Processing", "Data Analysis", "Text Classification", "Predictive Modeling", "Machine Learning"]
-  },
-  {
-    id: "systems-analysis",
-    degree: "Systems Analysis and Development",
-    level: "Associate / Bachelor's Equivalent Degree",
-    institution: "Cruzeiro do Sul University",
-    location: "Brazil",
-    completedDate: "Completed: 12/2024",
-    description: "Systems-focused degree covering relational databases, data structures, software analysis, systems design, and applied technology project delivery.",
-    tags: ["Relational Databases", "Systems Analysis", "Data Structures", "SQL Foundations", "Project Delivery"]
-  }
+  { id: "mba-nlp", degree: "MBA in Data Analysis and Natural Language Processing (NLP)", level: "Post-Graduate Degree", institution: "Anhanguera University", location: "Brazil", completedDate: "Completion: 01/2026", description: "Post-graduate studies focused on data analysis and Natural Language Processing.", tags: ["Data Analysis", "NLP", "Natural Language Processing"] },
+  { id: "systems-analysis", degree: "Associate Degree in Systems Analysis and Development", level: "Associate Degree", institution: "Cruzeiro do Sul University", location: "Brazil", completedDate: "Completion: 12/2024", description: "Systems analysis and development degree covering software, databases, and technology delivery.", tags: ["Systems Analysis", "Software Development", "Databases"] }
 ];
 
 export const ARCHITECTURE_SHOWCASE: ArchitectureHighlight[] = [
-  {
-    id: "analytics-engine",
-    title: "BigQuery Reporting & Reconciliation Pipeline",
-    category: "SQL & Data Quality",
-    description: "Built analytical queries and reconciliation routines that transform source data into trusted reporting tables for financial and operational analysis.",
-    impact: "Improved reporting confidence with automated variance checks and 99%+ data accuracy across business outputs.",
-    techStack: ["SQL", "BigQuery", "GCP", "Data Reconciliation", "Data Quality"],
-    metrics: "99%+ Accuracy | Automated Checks"
-  },
-  {
-    id: "dashboard-platform",
-    title: "Automated Tableau KPI Reporting",
-    category: "Visualization & Performance",
-    description: "Designed reporting feeds and performance dashboards that surface sales, operational, and executive metrics in a clear decision-making format.",
-    impact: "Reduced manual reporting effort while giving stakeholders a consistent view of targets, trends, and exceptions.",
-    techStack: ["Tableau", "BI Dashboards", "KPI Design", "Reporting Feeds", "SQL"],
-    metrics: "Executive KPIs | Actionable Trends"
-  },
-  {
-    id: "n8n-automation",
-    title: "n8n API Ingestion & AI Enrichment",
-    category: "Automation & AI-assisted Analysis",
-    description: "Connected external APIs, Python transformations, and AI-assisted text workflows through automated n8n pipelines with validation and monitoring steps.",
-    impact: "Reduced repetitive data processing and accelerated log parsing, sentiment analysis, and text classification tasks.",
-    techStack: ["n8n", "Python", "REST APIs", "ChatGPT", "Claude", "OpenAI API"],
-    metrics: "Automated Workflows | AI Enrichment"
-  }
+  { id: "ai-support", title: "AI-Assisted Incident Diagnosis", category: "AI & Technical Support", description: "Applied OpenAI API, generative AI, and structured prompts to parse logs, analyze sentiment, and support root-cause diagnosis.", impact: "Accelerated investigation of complex incidents and reduced repetitive support work.", techStack: ["OpenAI API", "Python", "Log Analysis", "NLP", "Prompt Engineering"], metrics: "Automated Diagnosis | Faster Resolution" },
+  { id: "rpa-operations", title: "Mission-Critical RPA Operations", category: "Systems & Automation", description: "Monitored and maintained more than 30 RPAs, web crawlers, and automated data workflows while supporting integrations and databases.", impact: "Improved operational continuity and exposed opportunities for cost-efficient automation.", techStack: ["Python", "RPAs", "SQL", "Web Crawlers", "Data Pipelines"], metrics: "30+ Systems | Operational Reliability" },
+  { id: "support-knowledge-base", title: "Technical Support Knowledge Base", category: "Documentation & Enablement", description: "Created troubleshooting guides, system manuals, and training materials that turn complex technical knowledge into repeatable support workflows.", impact: "Improved user onboarding, escalation quality, and cross-team technical communication.", techStack: ["Jira", "Zendesk", "Hinc", "Documentation", "Training"], metrics: "Clearer Escalations | Better Onboarding" }
 ];
