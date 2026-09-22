@@ -39,7 +39,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResume }) => {
     { label: 'About', href: '#about', id: 'about' },
     { label: 'Skills', href: '#skills', id: 'skills' },
     { label: 'Experience', href: '#experience', id: 'experience' },
-    { label: 'Data Lab', href: '#architecture', id: 'architecture' },
+    { label: 'Support Lab', href: '#architecture', id: 'architecture' },
     { label: 'Education', href: '#education', id: 'education' },
     { label: 'Contact', href: '#contact', id: 'contact' },
   ];
@@ -68,11 +68,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResume }) => {
               <div className="font-bold text-base sm:text-lg tracking-tight text-white flex items-center gap-2">
                 <span>{PERSONAL_INFO.shortName}</span>
                 <span className="hidden sm:inline-block text-[10px] uppercase font-semibold px-2 py-0.5 rounded-full bg-sky-500/10 text-sky-400 border border-sky-500/30">
-                  Data Analyst
+                  Systems Analyst
                 </span>
               </div>
               <p className="text-xs text-slate-400 font-mono hidden sm:block">
-                SQL &bull; BigQuery &bull; n8n
+                Python &bull; SQL &bull; AI Automation
               </p>
             </div>
           </a>

@@ -23,7 +23,7 @@ export const ExperienceTimeline: React.FC = () => {
             <span>Analytics Career Progression</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Data Analyst Experience & Track Record
+            Systems Analyst Experience & Track Record
           </h2>
           <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
             Delivering reliable pipelines, reconciled datasets, operational insights, and KPI reporting across data-focused roles.

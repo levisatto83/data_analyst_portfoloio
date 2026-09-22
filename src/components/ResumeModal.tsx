@@ -14,21 +14,21 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
 
   const handleCopyMarkdown = () => {
     const md = `# Levi Satto Siedschlag
-DATA ANALYST (SQL / BIGQUERY / N8N / DATA PIPELINES)
+SYSTEMS ANALYST (AI AUTOMATION / TECHNICAL SUPPORT / PYTHON)
 
 ${PERSONAL_INFO.phone} | ${PERSONAL_INFO.email} | ${PERSONAL_INFO.location}
-Languages: English (C2 Proficient / Native-level) | Spanish (C2 Proficient)
+Languages: English (C2 Proficient) | Spanish (C2 Proficient)
 
 ## PROFESSIONAL SUMMARY
 ---
 ${PERSONAL_INFO.summaryText}
 
-## TECHNICAL QUALIFICATIONS
+## CORE COMPETENCIES
 ---
-- Data Extraction & SQL: Advanced SQL, Google BigQuery, PostgreSQL, MySQL, Data Reconciliation & Quality Assurance
-- ETL & Automation: n8n Workflow Automation, Automated ETL/ELT Pipelines, Python (Pandas/NumPy), REST API Integrations
-- Visualization & Reporting: Tableau, Sales & Operational Performance Dashboards, Executive Metrics Tracking
-- Cloud & AI Workflow: GCP, AWS (Lambda, SQS, SNS), Git/GitHub, Linux, ChatGPT, Claude, OpenAI API, Prompt Engineering, Data Governance
+- Artificial Intelligence & Automation: OpenAI API, GPT-4, Embeddings, Prompt Engineering, LLM Integration, NLP, AI-Assisted Debugging, Python Automation
+- Troubleshooting & Data: Log Analysis, API Debugging, Advanced SQL, PostgreSQL, MySQL, ETL Pipelines, Data Validation
+- Support Tools & Workflows: Jira Service Management, Zendesk, Hinc, Trello, Anydesk, Technical Knowledge Base Creation
+- Systems & Infrastructure: Linux, Windows Server, Docker, MacOS, GCP, AWS, FastAPI, Django, JavaScript, React
 
 ## PROFESSIONAL EXPERIENCE
 ---
@@ -37,7 +37,7 @@ ${exp.company} | ${exp.period} (${exp.location})
 ${exp.achievements.map(a => `- ${a}`).join('\n')}
 `).join('\n')}
 
-## EDUCATION & CERTIFICATIONS
+## ACADEMIC BACKGROUND
 ---
 ${EDUCATIONS.map(edu => `- **${edu.degree}** — ${edu.level}
   ${edu.institution}, ${edu.location} | ${edu.completedDate}
@@ -100,7 +100,7 @@ ${EDUCATIONS.map(edu => `- **${edu.degree}** — ${edu.level}
               Levi Satto Siedschlag
             </h1>
             <p className="text-sm font-bold text-sky-400 uppercase tracking-wide">
-              DATA ANALYST (SQL / BIGQUERY / N8N / DATA PIPELINES)
+              SYSTEMS ANALYST (AI AUTOMATION / TECHNICAL SUPPORT / PYTHON)
             </p>
             <div className="flex flex-wrap items-center gap-4 text-xs text-slate-300 pt-1">
               <span>{PERSONAL_INFO.phone}</span>
@@ -110,7 +110,7 @@ ${EDUCATIONS.map(edu => `- **${edu.degree}** — ${edu.level}
               <span>{PERSONAL_INFO.location}</span>
             </div>
             <div className="text-xs text-slate-400 pt-1">
-              <strong className="text-slate-300">Languages:</strong> English (C2 Proficient / Native-level) | Spanish (C2 Proficient) | Portuguese (Professional)
+              <strong className="text-slate-300">Languages:</strong> English (C2 Proficient) | Spanish (C2 Proficient)
             </div>
           </div>
 
@@ -127,24 +127,24 @@ ${EDUCATIONS.map(edu => `- **${edu.degree}** — ${edu.level}
           {/* Technical Qualifications */}
           <div className="space-y-3">
             <h2 className="text-xs font-bold uppercase tracking-widest text-sky-400 border-b border-slate-800 pb-1">
-              TECHNICAL QUALIFICATIONS
+              CORE COMPETENCIES
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
               <div className="p-3 rounded-lg bg-slate-950/60 border border-slate-800 space-y-1">
-                <div className="font-bold text-white">Data Extraction & SQL</div>
-                <div className="text-slate-300">Advanced SQL, Google BigQuery, PostgreSQL, MySQL, Data Reconciliation & Quality Assurance</div>
+                <div className="font-bold text-white">Artificial Intelligence & Automation</div>
+                <div className="text-slate-300">OpenAI API, GPT-4, embeddings, prompt engineering, NLP, AI-assisted debugging, and Python automation</div>
               </div>
               <div className="p-3 rounded-lg bg-slate-950/60 border border-slate-800 space-y-1">
-                <div className="font-bold text-white">ETL & Automation</div>
-                <div className="text-slate-300">n8n Workflow Automation, Automated ETL/ELT Pipelines, Python (Pandas/NumPy), REST API Integrations</div>
+                <div className="font-bold text-white">Troubleshooting & Data</div>
+                <div className="text-slate-300">Log analysis, API debugging, advanced SQL, PostgreSQL, MySQL, ETL pipelines, and data validation</div>
               </div>
               <div className="p-3 rounded-lg bg-slate-950/60 border border-slate-800 space-y-1">
-                <div className="font-bold text-white">Visualization & Reporting</div>
-                <div className="text-slate-300">Tableau, sales and operational performance dashboards, automated reporting feeds, and executive metric tracking</div>
+                <div className="font-bold text-white">Support Tools & Workflows</div>
+                <div className="text-slate-300">Jira Service Management, Zendesk, Hinc, Trello, Anydesk, and technical knowledge base creation</div>
               </div>
               <div className="p-3 rounded-lg bg-slate-950/60 border border-slate-800 space-y-1">
-                <div className="font-bold text-white">Cloud, AI & Governance</div>
-                <div className="text-slate-300">GCP, AWS Lambda/SQS/SNS, Git/GitHub, Linux, ChatGPT, Claude, OpenAI API, prompt engineering, and data governance</div>
+                <div className="font-bold text-white">Systems & Infrastructure</div>
+                <div className="text-slate-300">Linux, Windows Server, Docker, MacOS, GCP, AWS, FastAPI, Django, JavaScript, and React</div>
               </div>
             </div>
           </div>

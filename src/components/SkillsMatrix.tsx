@@ -2,7 +2,6 @@ import React, { useState, useMemo } from 'react';
 import { SKILL_CATEGORIES } from '../data/portfolioData';
 import { 
   Server, 
-  Layout, 
   Database, 
   ShieldCheck, 
   Search, 
@@ -18,14 +17,14 @@ export const SkillsMatrix: React.FC = () => {
 
   const getCategoryIcon = (id: string) => {
     switch (id) {
-      case 'backend':
+      case 'systems-infrastructure':
         return Server;
-      case 'frontend':
-        return Layout;
-      case 'data':
+      case 'troubleshooting-data':
         return Database;
-      case 'devops-quality':
+      case 'support-workflows':
         return ShieldCheck;
+      case 'ai-automation':
+        return Zap;
       default:
         return Code2;
     }
@@ -65,10 +64,10 @@ export const SkillsMatrix: React.FC = () => {
             <span>Technical Qualifications</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Data Analytics Skills & Technical Stack
+            Systems Analysis Skills & Technical Stack
           </h2>
           <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
-            Practical tools for extracting, validating, transforming, visualizing, and governing business data.
+            Practical tools for troubleshooting, automating, documenting, and supporting production systems.
           </p>
         </div>
 

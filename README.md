@@ -1,6 +1,6 @@
 # Levi Satto Siedschlag — Portfolio Landing Page
 
-Modern, high-performance portfolio for **Levi Satto Siedschlag**, Senior Full-Stack Software Analyst specializing in Python (FastAPI, Django, Flask), ReactJS (TypeScript), and PostgreSQL data architectures.
+Modern, high-performance portfolio for **Levi Satto Siedschlag**, Systems Analyst specializing in complex troubleshooting, technical support, Python automation, cloud systems, SQL, and AI-driven workflows.
 
 ## 🚀 Quick Start
 
@@ -25,10 +25,10 @@ npm run preview
 - **Styling**: Tailwind CSS v4 + Glassmorphism Dark Mode
 - **Icons**: Lucide React
 - **Interactive Features**:
-  - **Hero & Executive Summary**: Bilingual badges, direct WhatsApp / Email quick actions.
+  - **Hero & Executive Summary**: English/Spanish proficiency, direct WhatsApp / email quick actions.
   - **Technical Qualifications Matrix**: Filterable competency matrix with search by technology/tag.
   - **Career Experience Timeline**: Detailed career progression with interactive milestone inspection.
-  - **Interactive Architecture & Performance Lab**: Live simulation of FastAPI endpoints and PostgreSQL query execution plans (`EXPLAIN ANALYZE`).
+  - **Interactive Technical Support Lab**: Simulated incident diagnosis, Python automation, and knowledge base workflows.
   - **Academic Background**: MBA in NLP/Data Analysis and Systems Analysis degrees.
   - **Printable & Markdown Resume Modal**: Formatted printable resume with 1-click Markdown export.
 
